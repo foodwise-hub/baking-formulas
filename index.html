@@ -1,77 +1,990 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Baking Formulas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<title>Formula</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Newsreader:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --kraft: #DFD3BC;
-    --dust: #EFE7D6;
-    --graphite: #2A2824;
-    --rye: #7A6A52;
-    --scorch: #8E3B18;
+  :root{ --paper:#fff; --ink:#1C1A18; --muted:#8B8279; --hair:#ECE8E3; --tint:#FAF8F6;
+    --accent:#C29424; --wash:rgba(194,148,36,0.12); --line:rgba(194,148,36,0.55); }
+  body[data-cat="sourdough"]{ --accent:#C29424; --wash:rgba(194,148,36,0.12); --line:rgba(194,148,36,0.55); }
+  body[data-cat="yeasted"]  { --accent:#6E8A4C; --wash:rgba(110,138,76,0.12);  --line:rgba(110,138,76,0.55); }
+  body[data-cat="pizza"]    { --accent:#B23A2B; --wash:rgba(178,58,43,0.10);   --line:rgba(178,58,43,0.5); }
+  body[data-cat="pastry"]   { --accent:#D67B2C; --wash:rgba(214,123,44,0.12);  --line:rgba(214,123,44,0.55); }
+  body[data-cat="cakes"]    { --accent:#9C4368; --wash:rgba(156,67,104,0.10);  --line:rgba(156,67,104,0.5); }
 
-    --font-display: 'Bricolage Grotesque', sans-serif;
-    --font-body: 'Newsreader', serif;
-    --font-mono: 'IBM Plex Mono', monospace;
-  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html{ color-scheme:light; }
+  html,body{ margin:0; padding:0; background:#fff !important; color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  body{ padding-bottom:80px; }
 
-  * { box-sizing: border-box; }
+  .topbar{ position:sticky; top:0; z-index:50; display:flex; align-items:center; gap:10px;
+    padding:10px 16px; background:rgba(255,255,255,0.93); backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--hair); }
+  .pill{ display:flex; align-items:center; gap:7px; background:none; border:1px solid var(--hair);
+    border-radius:999px; padding:7px 13px; font-family:'IBM Plex Mono',monospace;
+    font-size:11px; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink); cursor:pointer; }
+  .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent); flex:0 0 8px; }
+  .chev{ font-size:9px; color:var(--muted); }
+  .spacer{ flex:1; }
+  .awake{ color:var(--muted); }
+  .awake .dot{ background:var(--muted); }
+  .awake.on{ background:var(--accent); border-color:var(--accent); color:#fff; }
+  .awake.on .dot{ background:#fff; }
 
-  html { font-size: 16px; }
+  .sheet-wrap{ position:fixed; inset:0; z-index:100; background:rgba(28,26,24,0.3); display:none; align-items:flex-end; }
+  .sheet-wrap.open{ display:flex; }
+  .sheet{ width:100%; background:#fff; border-radius:18px 18px 0 0;
+    padding:8px 10px calc(16px + env(safe-area-inset-bottom)); max-height:82vh; display:flex; flex-direction:column; }
+  .sheet h4{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--muted); margin:12px 14px 8px; font-weight:500; }
+  .opt{ display:flex; align-items:center; gap:12px; width:100%; background:none; border:none;
+    padding:14px; border-radius:12px; font-size:16px; color:var(--ink); cursor:pointer; text-align:left; }
+  .opt:active{ background:var(--tint); }
+  .swatch{ width:15px; height:15px; border-radius:5px; flex:0 0 15px; }
+  .opt .check{ margin-left:auto; color:var(--muted); font-size:14px; opacity:0; }
+  .opt.sel .check{ opacity:1; }
+  .srch{ margin:4px 12px 8px; }
+  .srch input{ width:100%; padding:13px 14px; border:1px solid var(--hair); border-radius:11px;
+    font-size:16px; color:var(--ink); background:var(--tint); }
+  .srch input:focus{ outline:none; border-color:var(--accent); background:#fff; }
+  .liblist{ overflow-y:auto; -webkit-overflow-scrolling:touch; padding-bottom:6px; }
+  .libgrp{ font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--muted); margin:14px 14px 6px; }
+  .libitem{ display:flex; align-items:center; width:100%; background:none; border:none;
+    padding:13px 14px; border-radius:11px; font-size:16px; color:var(--ink); cursor:pointer; text-align:left; }
+  .libitem:active{ background:var(--tint); }
+  .libitem .plus{ margin-left:auto; color:var(--accent); font-size:19px; }
+  .libitem[disabled]{ opacity:0.32; }
 
-  body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--kraft);
-    color: var(--graphite);
-    font-family: var(--font-body);
-  }
+  /* ---------- collection ---------- */
+  .col-head{ padding:26px 20px 4px; }
+  .col-head h2{ font-family:'Fraunces',serif; font-weight:600; font-size:29px; margin:0 0 5px; letter-spacing:-0.015em; }
+  .col-head .cnt{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted); letter-spacing:0.05em; }
+  .csec{ padding:22px 20px 0; }
+  .csec + .csec{ margin-top:6px; }
+  .clabel{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.13em;
+    text-transform:uppercase; color:var(--muted); margin:0 0 12px; }
+  .recent{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .rcard{ border:1px solid var(--hair); border-radius:14px; overflow:hidden; background:none;
+    padding:0; text-align:left; cursor:pointer; display:block; }
+  .rcard:active{ background:var(--tint); }
+  .thumb{ width:100%; aspect-ratio:1/1; position:relative; display:flex; align-items:flex-end;
+    justify-content:flex-start; }
+  .thumb .cam{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.1em;
+    text-transform:uppercase; color:rgba(28,26,24,0.3); }
+  .rcard .m{ padding:11px 12px 13px; }
+  .rcard .m .cat{ font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:0.1em;
+    text-transform:uppercase; margin-bottom:4px; }
+  .rcard .m .t{ font-family:'Fraunces',serif; font-size:15px; line-height:1.25; }
+  .newbtn{ display:flex; align-items:center; justify-content:center; gap:8px; width:100%;
+    padding:16px; background:none; border:1.5px dashed var(--hair); border-radius:13px;
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.07em;
+    text-transform:uppercase; color:var(--accent); cursor:pointer; margin-bottom:16px; }
+  .newbtn:active{ background:var(--tint); }
+  .rrow{ display:flex; align-items:center; gap:14px; width:100%; background:none; border:none;
+    border-bottom:1px solid var(--hair); padding:13px 2px; cursor:pointer; text-align:left; }
+  .rrow:active{ background:var(--tint); }
+  .rrow .th{ width:58px; height:58px; border-radius:11px; flex:0 0 58px; position:relative; }
+  .rrow .info{ flex:1; min-width:0; }
+  .rrow .n{ font-family:'Fraunces',serif; font-size:17px; line-height:1.25; margin-bottom:3px; }
+  .rrow .s{ font-size:13px; color:var(--muted); line-height:1.4; overflow:hidden;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+  .rrow .stat{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent);
+    flex:0 0 auto; margin-left:4px; }
 
-  main {
-    text-align: center;
-    padding: 2rem;
-  }
+  /* ---------- recipe ---------- */
+  .photo{ width:100%; aspect-ratio:16/10; position:relative; }
+  .photo .ph{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.14em;
+    text-transform:uppercase; color:rgba(28,26,24,0.3); }
+  .head{ padding:22px 20px 6px; }
+  .kicker{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--accent); margin-bottom:9px; }
+  h1{ font-family:'Fraunces',serif; font-weight:600; font-size:32px; line-height:1.1;
+    margin:0 0 8px; letter-spacing:-0.015em; outline:none; }
+  h1:focus{ border-bottom:1.5px solid var(--accent); }
+  .sub{ font-size:15.5px; line-height:1.55; color:var(--muted); margin:0; outline:none; }
+  .tags{ display:flex; gap:7px; flex-wrap:wrap; margin-top:14px; }
+  .tag{ font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.05em;
+    text-transform:uppercase; color:var(--muted); background:var(--tint); border-radius:5px; padding:5px 9px; }
 
-  h1 {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 2.441rem; /* 1.25 scale from 16px base, ~4 steps up */
-    margin: 0 0 0.5rem;
-    letter-spacing: -0.01em;
-  }
-
-  p.sub {
-    font-family: var(--font-mono);
-    font-variant-numeric: tabular-nums;
-    color: var(--rye);
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin: 0;
-  }
-
-  .accent {
-    display: inline-block;
-    width: 2.5rem;
-    height: 2px;
-    background: var(--scorch);
-    margin: 1.25rem auto 0;
-  }
+  section{ padding:26px 20px 4px; }
+  section + section{ border-top:1px solid var(--hair); margin-top:22px; }
+  .slabel{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.13em;
+    text-transform:uppercase; color:var(--muted); margin:0 0 16px; }
+  .cards{ display:flex; gap:11px; margin-bottom:24px; }
+  .card{ flex:1; border:1px solid var(--hair); border-radius:12px; padding:13px 15px; }
+  .card .l{ font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.09em;
+    text-transform:uppercase; color:var(--muted); margin-bottom:5px; }
+  .card .v{ font-family:'IBM Plex Mono',monospace; font-size:22px; font-weight:600; letter-spacing:-0.01em; }
+  .card.accent .v{ color:var(--accent); }
+  .wblock{ margin-bottom:22px; }
+  .wtop{ display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+  .wtop .l{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.09em;
+    text-transform:uppercase; color:var(--muted); }
+  .wfield{ display:flex; align-items:baseline; gap:6px; }
+  .wfield input{ width:92px; text-align:right; font-family:'IBM Plex Mono',monospace;
+    font-size:25px; font-weight:600; color:var(--ink); background:none; border:none;
+    border-bottom:1.5px solid var(--hair); padding:1px 3px 3px; }
+  .wfield input:focus{ outline:none; border-bottom-color:var(--accent); }
+  .wfield span{ font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--muted); }
+  .yield{ display:flex; align-items:center; justify-content:space-between;
+    border:1px solid var(--hair); border-radius:12px; padding:13px 15px; }
+  .yield .l{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.09em;
+    text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+  .yield .each{ font-family:'IBM Plex Mono',monospace; font-size:12.5px; }
+  .stepper{ display:flex; align-items:center; gap:2px; }
+  .stepper button{ width:38px; height:38px; border-radius:10px; border:1px solid var(--hair);
+    background:none; font-size:19px; color:var(--ink); cursor:pointer; display:flex;
+    align-items:center; justify-content:center; line-height:1; }
+  .stepper input{ width:46px; text-align:center; border:none; background:none;
+    font-family:'IBM Plex Mono',monospace; font-size:19px; font-weight:600; color:var(--ink); }
+  .stepper input:focus{ outline:none; }
+  .seg{ display:flex; border:1px solid var(--hair); border-radius:11px; overflow:hidden; margin-bottom:22px; }
+  .seg button{ flex:1; background:none; border:none; padding:12px 6px; cursor:pointer;
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.05em;
+    text-transform:uppercase; color:var(--muted); border-right:1px solid var(--hair); }
+  .seg button:last-child{ border-right:none; }
+  .seg button.on{ background:var(--accent); color:#fff; }
+  .grp{ font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.13em;
+    text-transform:uppercase; color:var(--muted); margin:24px 0 10px; }
+  .grp:first-child{ margin-top:0; }
+  .ftotal{ display:flex; align-items:baseline; justify-content:space-between;
+    padding:0 2px 13px; border-bottom:1.5px solid var(--ink); margin-bottom:16px; }
+  .ftotal .n{ font-family:'Fraunces',serif; font-size:17px; font-weight:600; }
+  .ftotal .f{ display:flex; align-items:baseline; gap:9px; font-family:'IBM Plex Mono',monospace; }
+  .ftotal .pct{ font-size:12px; color:var(--muted); }
+  .ftotal .g{ font-size:19px; font-weight:600; }
+  .ftotal .u{ font-size:11px; color:var(--muted); }
+  .ing{ margin-bottom:22px; }
+  .ing-top{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:9px; padding:0 2px; gap:10px; }
+  .ing-name{ font-family:'Fraunces',serif; font-size:17px; flex:1; min-width:0; }
+  .ing-name .hint{ display:block; font-family:'IBM Plex Mono',monospace; font-size:10px;
+    color:var(--muted); margin-top:2px; }
+  .ing-f{ display:flex; align-items:baseline; gap:9px; font-family:'IBM Plex Mono',monospace; flex:0 0 auto; }
+  .ing-f .pct{ font-size:12.5px; color:var(--accent); font-weight:500; min-width:44px; text-align:right; }
+  .ing-f .g{ font-size:18px; font-weight:600; min-width:54px; text-align:right; }
+  .ing-f .u{ font-size:11px; color:var(--muted); }
+  .spoon{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--muted);
+    text-align:right; margin:-4px 2px 7px; }
+  .rm{ background:none; border:none; color:var(--muted); font-size:17px; padding:0 0 0 4px; cursor:pointer; line-height:1; }
+  .bar{ position:relative; height:52px; }
+  .bar .track{ position:absolute; inset:0; background:var(--tint); border:1px solid var(--hair); border-radius:14px; }
+  .bar .fill{ position:absolute; left:0; top:0; bottom:0; min-width:3px; background:var(--wash);
+    border:1.5px solid var(--line); border-radius:14px; pointer-events:none; transition:width 0.06s linear; }
+  .bar input[type=range]{ position:absolute; inset:0; width:100%; height:52px; margin:0; padding:0;
+    background:transparent; -webkit-appearance:none; appearance:none; touch-action:none; z-index:3; outline:none !important; }
+  .bar input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none !important; width:44px; height:52px;
+    background:transparent !important; border:none !important; box-shadow:none !important; }
+  .bar input[type=range]::-moz-range-thumb{ width:44px; height:52px; background:transparent !important;
+    border:none !important; box-shadow:none !important; }
+  .bar input[type=range]::-moz-range-track{ background:transparent !important; border:none !important; }
+  .bar .ends{ position:absolute; inset:0; display:flex; align-items:center; justify-content:space-between;
+    padding:0 13px; pointer-events:none; font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:var(--muted); }
+  .bar.slim{ height:40px; }
+  .bar.slim input[type=range]{ height:40px; }
+  .bar.slim input[type=range]::-webkit-slider-thumb{ height:40px; }
+  .bar.slim .track,.bar.slim .fill{ border-radius:11px; }
+  .nested{ margin-top:14px; }
+  .nested-top{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:8px; }
+  .nested-top .l{ font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.07em;
+    text-transform:uppercase; color:var(--muted); }
+  .nested-top .v{ font-family:'IBM Plex Mono',monospace; font-size:14px; font-weight:600; }
+  .addbtn{ display:flex; align-items:center; justify-content:center; gap:8px; width:100%;
+    padding:15px; margin-top:6px; background:none; border:1.5px dashed var(--hair); border-radius:13px;
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.07em;
+    text-transform:uppercase; color:var(--accent); cursor:pointer; }
+  .empty{ text-align:center; padding:18px 10px 6px; color:var(--muted); font-size:14.5px; line-height:1.5; }
+  .dtotal{ display:flex; align-items:baseline; justify-content:space-between; padding-top:16px;
+    border-top:1px solid var(--hair); margin-top:6px; }
+  .dtotal .l{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.09em;
+    text-transform:uppercase; color:var(--muted); }
+  .dtotal .v{ font-family:'IBM Plex Mono',monospace; font-size:20px; font-weight:600; }
+  .stp{ display:flex; gap:15px; padding:17px 0; border-bottom:1px solid var(--hair); }
+  .stp:last-of-type{ border-bottom:none; }
+  .stp-n{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--accent);
+    flex:0 0 18px; padding-top:4px; font-weight:600; }
+  .stp-t{ font-size:16px; line-height:1.6; }
+  .timer{ display:inline-flex; align-items:center; gap:7px; margin-top:11px;
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.05em;
+    text-transform:uppercase; color:var(--accent); background:var(--wash); border:none;
+    border-radius:9px; padding:10px 15px; cursor:pointer; }
+  .bake{ display:flex; gap:34px; }
+  .bake .n{ font-family:'IBM Plex Mono',monospace; font-size:26px; font-weight:600; }
+  .bake .l{ font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.09em;
+    text-transform:uppercase; color:var(--muted); margin-top:3px; }
+  .bake-note{ font-size:15px; line-height:1.6; color:var(--muted); margin-top:15px; }
+  .notes{ font-size:16px; line-height:1.65; outline:none; }
+  .print{ display:flex; align-items:center; justify-content:center; gap:8px; width:calc(100% - 40px);
+    margin:30px 20px 0; padding:16px; background:var(--ink); color:#fff; border:none;
+    border-radius:13px; font-family:'IBM Plex Mono',monospace; font-size:11.5px;
+    letter-spacing:0.09em; text-transform:uppercase; cursor:pointer; }
+  .stamp{ display:block; margin:18px 20px 0; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--muted); }
+  .toast{ position:fixed; left:50%; bottom:26px; transform:translateX(-50%) translateY(20px);
+    background:var(--ink); color:#fff; padding:11px 18px; border-radius:10px;
+    font-family:'IBM Plex Mono',monospace; font-size:11px; opacity:0; pointer-events:none;
+    transition:all 0.2s ease; z-index:200; max-width:88vw; text-align:center; }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .hidden{ display:none !important; }
 </style>
 </head>
-<body>
-<main>
-  <h1>Baking Formulas</h1>
-  <p class="sub">grams &middot; percent &middot; formula</p>
-  <div class="accent"></div>
-</main>
+<body data-cat="sourdough">
+
+<div class="topbar">
+  <button class="pill hidden" id="backBtn">← Back</button>
+  <button class="pill" id="catBtn"><span class="dot"></span><span id="catLabel">Sourdough</span><span class="chev">▼</span></button>
+  <div class="spacer"></div>
+  <button class="pill awake" id="awakeBtn"><span class="dot"></span><span id="awakeLabel">Keep screen on</span></button>
+</div>
+
+<div class="sheet-wrap" id="catMenu"><div class="sheet"><h4>Category</h4><div id="catOpts"></div></div></div>
+<div class="sheet-wrap" id="libMenu"><div class="sheet"><h4>Add ingredient</h4>
+  <div class="srch"><input type="text" id="libSearch" placeholder="Search ingredients…" autocomplete="off"></div>
+  <div class="liblist" id="libList"></div></div></div>
+
+<!-- COLLECTION -->
+<div id="colView">
+  <div class="col-head"><h2 id="colTitle"></h2><div class="cnt" id="colCount"></div></div>
+  <div class="csec hidden" id="recentSec">
+    <div class="clabel">Recently opened</div>
+    <div class="recent" id="recentGrid"></div>
+  </div>
+  <div class="csec">
+    <div class="clabel" id="allLabel">All recipes</div>
+    <button class="newbtn" id="newBtn">+ New recipe</button>
+    <div id="recipeList"></div>
+  </div>
+</div>
+
+<!-- RECIPE -->
+<div id="recView" class="hidden">
+  <div class="photo" id="photo"><div class="ph">Add a photo</div></div>
+  <div class="head">
+    <div class="kicker" id="kicker"></div>
+    <h1 id="title" contenteditable="true" spellcheck="false"></h1>
+    <p class="sub" id="subtitle" contenteditable="true" spellcheck="false"></p>
+    <div class="tags" id="tags"></div>
+  </div>
+  <section>
+    <div class="slabel">Batch</div>
+    <div class="cards">
+      <div class="card"><div class="l" id="c1l"></div><div class="v" id="c1v"></div></div>
+      <div class="card accent"><div class="l" id="c2l"></div><div class="v" id="c2v"></div></div>
+    </div>
+    <div class="wblock">
+      <div class="wtop"><div class="l">Total batch weight</div>
+        <div class="wfield"><input type="number" id="wInput"><span>g</span></div></div>
+      <div class="bar"><div class="track"></div><div class="fill" id="wFill"></div>
+        <div class="ends"><span>200</span><span>6000</span></div>
+        <input type="range" id="wSlider" min="200" max="6000" step="10"></div>
+    </div>
+    <div class="yield">
+      <div><div class="l" id="yieldLabel"></div><div class="each" id="each"></div></div>
+      <div class="stepper"><button id="minus">−</button><input type="number" id="items" min="1" max="60"><button id="plus">+</button></div>
+    </div>
+  </section>
+  <section>
+    <div class="slabel">Formula · drag to adjust</div>
+    <div id="segWrap"></div>
+    <div id="ledger"></div>
+    <button class="addbtn" id="addBtn">+ Add ingredient</button>
+    <div class="dtotal"><div class="l">Total</div><div class="v" id="dTotal"></div></div>
+  </section>
+  <section><div class="slabel">Method</div><div id="method"></div></section>
+  <section><div class="slabel">Bake</div><div class="bake" id="bake"></div><div class="bake-note" id="bakeNote"></div></section>
+  <section><div class="slabel">Notes</div><div class="notes" id="notes" contenteditable="true" spellcheck="false"></div></section>
+  <button class="print" id="printBtn">Print formula sheet</button>
+  <span class="stamp" id="stamp"></span>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+
+/* ============ INGREDIENT LIBRARY ============ */
+const LIB = [
+ {k:'bread-flour',n:'Bread flour',g:'flour',d:100,max:100},
+ {k:'ap-flour',n:'All-purpose flour',g:'flour',d:100,max:100},
+ {k:'ww-flour',n:'Whole wheat flour',g:'flour',d:20,max:100},
+ {k:'rye-flour',n:'Rye flour',g:'flour',d:15,max:100},
+ {k:'spelt-flour',n:'Spelt flour',g:'flour',d:20,max:100},
+ {k:'cake-flour',n:'Cake flour',g:'flour',d:100,max:100},
+ {k:'pastry-flour',n:'Pastry flour',g:'flour',d:100,max:100},
+ {k:'00-flour',n:'00 flour',g:'flour',d:100,max:100},
+ {k:'semolina',n:'Semolina',g:'flour',d:20,max:100},
+ {k:'einkorn',n:'Einkorn flour',g:'flour',d:20,max:100},
+ {k:'almond-flour',n:'Almond flour',g:'flour',d:25,max:100},
+ {k:'oat-flour',n:'Oat flour',g:'flour',d:20,max:100},
+ {k:'buckwheat',n:'Buckwheat flour',g:'flour',d:15,max:100},
+ {k:'rice-flour',n:'Rice flour',g:'flour',d:15,max:100},
+ {k:'cornmeal',n:'Cornmeal',g:'flour',d:15,max:100},
+ {k:'water',n:'Water',g:'liquid',d:70,max:120},
+ {k:'milk',n:'Whole milk',g:'liquid',d:60,max:120},
+ {k:'buttermilk',n:'Buttermilk',g:'liquid',d:50,max:120},
+ {k:'cream',n:'Heavy cream',g:'liquid',d:30,max:120},
+ {k:'sour-cream',n:'Sour cream',g:'liquid',d:25,max:120},
+ {k:'yogurt',n:'Yogurt',g:'liquid',d:25,max:120},
+ {k:'coffee',n:'Brewed coffee',g:'liquid',d:20,max:120},
+ {k:'oj',n:'Orange juice',g:'liquid',d:15,max:100},
+ {k:'butter',n:'Unsalted butter',g:'fat',d:10,max:150},
+ {k:'brown-butter',n:'Browned butter',g:'fat',d:60,max:150},
+ {k:'lam-butter',n:'Butter (lamination)',g:'fat',d:50,max:120},
+ {k:'olive-oil',n:'Olive oil',g:'fat',d:5,max:60},
+ {k:'neutral-oil',n:'Neutral oil',g:'fat',d:10,max:100},
+ {k:'coconut-oil',n:'Coconut oil',g:'fat',d:15,max:60},
+ {k:'shortening',n:'Shortening',g:'fat',d:20,max:80},
+ {k:'lard',n:'Lard',g:'fat',d:15,max:60},
+ {k:'cream-cheese',n:'Cream cheese',g:'fat',d:30,max:120},
+ {k:'sugar',n:'Granulated sugar',g:'sugar',d:20,max:220},
+ {k:'brown-sugar',n:'Brown sugar',g:'sugar',d:40,max:220},
+ {k:'powdered-sugar',n:'Powdered sugar',g:'sugar',d:25,max:150},
+ {k:'honey',n:'Honey',g:'sugar',d:10,max:80},
+ {k:'maple',n:'Maple syrup',g:'sugar',d:10,max:80},
+ {k:'molasses',n:'Molasses',g:'sugar',d:5,max:60},
+ {k:'corn-syrup',n:'Corn syrup',g:'sugar',d:10,max:60},
+ {k:'malt',n:'Malt syrup',g:'sugar',d:2,max:10,tsp:7},
+ {k:'egg',n:'Whole egg',g:'egg',d:30,max:200},
+ {k:'yolk',n:'Egg yolk',g:'egg',d:12,max:80},
+ {k:'white',n:'Egg white',g:'egg',d:20,max:100},
+ {k:'levain',n:'Levain / starter',g:'leaven',d:15,max:40,levain:true},
+ {k:'idy',n:'Instant yeast',g:'leaven',d:1,max:4,tsp:3.1},
+ {k:'ady',n:'Active dry yeast',g:'leaven',d:1.2,max:4,tsp:3.1},
+ {k:'fresh-yeast',n:'Fresh yeast',g:'leaven',d:3,max:8},
+ {k:'bp',n:'Baking powder',g:'leaven',d:2,max:8,tsp:4.6},
+ {k:'bs',n:'Baking soda',g:'leaven',d:1,max:5,tsp:4.8},
+ {k:'tartar',n:'Cream of tartar',g:'leaven',d:0.5,max:4,tsp:3},
+ {k:'sea-salt',n:'Fine sea salt',g:'salt',d:2,max:5,tsp:6},
+ {k:'kosher-salt',n:'Kosher salt',g:'salt',d:2.4,max:6,tsp:4.8},
+ {k:'vanilla',n:'Vanilla extract',g:'flavour',d:3,max:10,tsp:4.2},
+ {k:'almond-ext',n:'Almond extract',g:'flavour',d:1,max:5,tsp:4.2},
+ {k:'cinnamon',n:'Cinnamon',g:'flavour',d:1.5,max:10,tsp:2.6},
+ {k:'nutmeg',n:'Nutmeg',g:'flavour',d:0.5,max:4,tsp:2.2},
+ {k:'cardamom',n:'Cardamom',g:'flavour',d:1,max:6,tsp:2},
+ {k:'ginger',n:'Ground ginger',g:'flavour',d:1,max:6,tsp:1.8},
+ {k:'cocoa',n:'Cocoa powder',g:'flavour',d:20,max:60},
+ {k:'espresso',n:'Espresso powder',g:'flavour',d:1,max:6,tsp:2},
+ {k:'zest',n:'Citrus zest',g:'flavour',d:2,max:10,tsp:2},
+ {k:'choc-chips',n:'Chocolate chips',g:'inclusion',d:60,max:150},
+ {k:'dark-choc',n:'Dark chocolate, chopped',g:'inclusion',d:70,max:250},
+ {k:'raisins',n:'Raisins',g:'inclusion',d:40,max:120},
+ {k:'cranberries',n:'Dried cranberries',g:'inclusion',d:35,max:120},
+ {k:'walnuts',n:'Walnuts',g:'inclusion',d:30,max:100},
+ {k:'pecans',n:'Pecans',g:'inclusion',d:30,max:100},
+ {k:'almonds',n:'Sliced almonds',g:'inclusion',d:25,max:100},
+ {k:'oats',n:'Rolled oats',g:'inclusion',d:40,max:120},
+ {k:'coconut',n:'Shredded coconut',g:'inclusion',d:25,max:100},
+ {k:'sesame',n:'Sesame seeds',g:'inclusion',d:8,max:40,tsp:3},
+ {k:'poppy',n:'Poppy seeds',g:'inclusion',d:6,max:30,tsp:2.8},
+ {k:'sunflower',n:'Sunflower seeds',g:'inclusion',d:15,max:60},
+ {k:'candied-peel',n:'Candied peel',g:'inclusion',d:20,max:80}
+];
+const META = Object.fromEntries(LIB.map(i=>[i.k,i]));
+const GROUPS = ['flour','liquid','fat','sugar','egg','leaven','salt','flavour','inclusion'];
+const GRP_LABEL = {flour:'Flour',liquid:'Liquid',fat:'Fat',sugar:'Sugar',egg:'Egg',
+  leaven:'Leaven',salt:'Salt',flavour:'Flavour',inclusion:'Inclusions'};
+
+/* ============ CATEGORIES ============ */
+const CATS = {
+ sourdough:{label:'Sourdough',colour:'#C29424',noun:'Loaves',itemW:900,items:2,
+   seed:[['bread-flour',100],['ww-flour',0],['water',0],['levain',0,100],['sea-salt',0]]},
+ yeasted:{label:'Yeasted Dough',colour:'#6E8A4C',noun:'Loaves',itemW:800,items:2,
+   seed:[['bread-flour',100],['water',0],['milk',0],['sugar',0],['butter',0],['idy',0],['sea-salt',0]]},
+ pizza:{label:'Pizza',colour:'#B23A2B',noun:'Balls',itemW:250,items:6,leavenChoice:true,
+   seed:[['00-flour',100],['water',0],['idy',0],['sea-salt',0]]},
+ pastry:{label:'Pastry',colour:'#D67B2C',noun:'Pieces',itemW:80,items:12,builder:true,seed:[]},
+ cakes:{label:'Cakes & Cookies',colour:'#9C4368',noun:'Pieces',itemW:55,items:16,builder:true,seed:[]}
+};
+
+/* ============ RECIPE DATA ============ */
+function R(id,t,s,g,w,n,ing,st,b1,b2,bl,bn,nt){
+  return {id,t,s,g,w,n,ing,st,bake:[[b1,'Oven'],[b2,bl||'Minutes']],bn,nt,photo:null};
+}
+const RECIPES = {
+sourdough:[
+ R('country','Country Sourdough','Open crumb, deep blistered crust. Overnight cold retard.',['high hydration','overnight'],900,2,
+  [['bread-flour',80],['ww-flour',20],['water',76],['levain',15,100],['sea-salt',2]],
+  [['Mix flours with all but 50 g of the water. Rest 45 minutes.',1],['Add levain and salt, then work in the reserved water.',0],['Bulk ferment, folding every 45 minutes.',1],['Pre-shape, rest, shape and basket.',0],['Cold retard overnight.',1]],
+  '245°C','45',0,'Covered 20 min, uncovered 25 min. Steam the first half.','Crust was best yet. Could push water to 78%.'),
+ R('rustic-white','Rustic White','Single flour, long bulk. The loaf that teaches you fermentation.',['beginner','one flour'],900,2,
+  [['bread-flour',100],['water',72],['levain',20,100],['sea-salt',2]],
+  [['Autolyse flour and water for one hour.',1],['Add levain and salt, mix to full incorporation.',0],['Bulk with four sets of folds.',1],['Shape, basket, retard overnight.',1]],
+  '240°C','42',0,'Score deeply, one clean slash. Steam 20 minutes.','Best crumb structure of any loaf here.'),
+ R('whole-wheat','Whole Wheat Sourdough','Full whole grain. Dense, nutty, deeply sour.',['100% whole grain','high hydration'],900,2,
+  [['ww-flour',100],['water',82],['levain',20,100],['sea-salt',2.2]],
+  [['Autolyse two hours, whole wheat drinks slowly.',1],['Add levain and salt with wet hands.',0],['Bulk with gentle coil folds only.',1],['Shape tightly, retard overnight.',1]],
+  '235°C','48',0,'Longer, lower bake. The bran burns easily above 240°C.','Needs the full two-hour autolyse or it turns gummy.'),
+ R('seeded','Seeded Multigrain','Toasted seed soaker folded through a three-flour base.',['seeded','soaker'],900,2,
+  [['bread-flour',70],['ww-flour',20],['rye-flour',10],['water',80],['levain',20,100],['sea-salt',2],['sunflower',10],['sesame',5]],
+  [['Toast the seeds and cover with hot water. Cool completely.',1],['Autolyse the flours and water one hour.',1],['Add levain, salt and the drained soaker.',0],['Bulk, shape, roll the wet loaf in extra seeds, retard.',1]],
+  '240°C','45',0,'Seeds on the crust scorch fast. Cover the full first half.','Drain the soaker properly or hydration runs away.'),
+ R('danish-rye','Danish Rye','Dense, dark, sliced thin. Keeps for a week and improves.',['rye heavy','tin loaf'],900,2,
+  [['rye-flour',60],['bread-flour',40],['water',85],['levain',25,100],['sea-salt',2.2],['sunflower',15]],
+  [['Mix everything to a thick paste. Rye needs no kneading.',0],['Scrape into an oiled tin and smooth the top wet.',0],['Proof until small holes appear across the surface.',1],['Bake long and low, then cool 24 hours before slicing.',1]],
+  '180°C','75',0,'Do not slice for a full day. The crumb sets as it cools.','Slicing early ruins it. Learned that the hard way.'),
+ R('spelt','Spelt Sourdough','Sweet and delicate. Handle gently, spelt gluten tears.',['ancient grain','gentle handling'],900,2,
+  [['spelt-flour',60],['bread-flour',40],['water',74],['levain',18,100],['sea-salt',2]],
+  [['Short autolyse, 30 minutes only.',1],['Mix in levain and salt without over-working.',0],['Bulk with two gentle folds, no more.',1],['Shape lightly and retard.',1]],
+  '240°C','40',0,'Bakes faster than wheat. Check at 35 minutes.','Over-fermenting turns spelt to soup. Watch it closely.'),
+ R('baguette','Sourdough Baguette','Thin crust, open irregular crumb, aggressive scoring.',['shaped','same day'],320,4,
+  [['bread-flour',100],['water',72],['levain',15,100],['sea-salt',2]],
+  [['Autolyse one hour, then add levain and salt.',1],['Bulk three hours with folds every 45 minutes.',1],['Divide, pre-shape, rest 30 minutes, shape long.',1],['Proof in couche, score five overlapping slashes.',1]],
+  '250°C','22',0,'Maximum steam for the first 12 minutes, then vent completely.','Scoring at a shallow angle is what opens the ears.'),
+ R('olive-rosemary','Olive & Rosemary','Salty, herbal, torn apart warm with olive oil.',['savoury','inclusions'],900,2,
+  [['bread-flour',90],['ww-flour',10],['water',75],['levain',18,100],['sea-salt',2],['olive-oil',3]],
+  [['Autolyse, then add levain, salt and oil.',1],['Laminate the olives and rosemary in on the second fold.',0],['Bulk out, shape, retard overnight.',1]],
+  '240°C','42',0,'Olives leach moisture. Pat them dry before folding in.','Halved olives distribute better than whole.'),
+ R('focaccia','Sourdough Focaccia','Wet, dimpled, drowned in olive oil. Nearly no shaping.',['no knead','high hydration','pan'],700,2,
+  [['bread-flour',100],['water',85],['levain',20,100],['sea-salt',2.2],['olive-oil',8]],
+  [['Mix everything in a bowl with wet hands.',0],['Four sets of coil folds, 45 minutes apart.',1],['Transfer to an oiled pan, rest until puffy.',1],['Dimple hard with oiled fingers, salt, and bake.',0]],
+  '230°C','25',0,'Be generous with the oil in the pan. It fries the base.','More oil than feels sensible is the correct amount.'),
+ R('cranberry-walnut','Cranberry Walnut','Sweet and bitter against a sour crumb. Holiday loaf.',['inclusions','festive'],900,2,
+  [['bread-flour',80],['ww-flour',20],['water',78],['levain',18,100],['sea-salt',2],['cranberries',20],['walnuts',15]],
+  [['Soak the cranberries in warm water, then drain well.',1],['Autolyse, add levain and salt.',1],['Laminate the fruit and nuts in during bulk.',0],['Shape, retard overnight, bake from cold.',1]],
+  '240°C','45',0,'Walnuts darken the crumb purple. Entirely normal.','Toast the walnuts first, it doubles the flavour.')
+],
+yeasted:[
+ R('milk-loaf','Soft Milk Loaf','Enriched sandwich loaf. Feathery crumb that stays soft for days.',['enriched','same day','tin'],800,2,
+  [['bread-flour',100],['milk',62],['egg',10],['sugar',10],['butter',10],['idy',1.2],['sea-salt',2]],
+  [['Warm the milk to blood temperature and mix everything except the butter.',0],['Knead, then add softened butter piece by piece to a full windowpane.',0],['Bulk until doubled.',1],['Divide, roll flat, roll up, place seam down in a tin.',0],['Proof until the dough crowns the tin.',1]],
+  '180°C','32',0,'Egg wash before baking. Tent with foil if it colours early.','A milk scald would give a softer crumb still.'),
+ R('brioche','Brioche','Half butter by flour weight. Rich, yellow, barely bread.',['very enriched','overnight chill'],500,2,
+  [['bread-flour',100],['egg',50],['milk',20],['butter',50],['sugar',12],['idy',2],['sea-salt',2]],
+  [['Mix flour, eggs, milk, sugar, yeast and salt to a strong dough.',0],['Add cold butter slowly. This takes 15 minutes of mixing.',0],['Chill the dough overnight. It is unworkable warm.',1],['Shape cold, proof slowly until tripled.',1]],
+  '180°C','30',0,'Bake in a tin. Free-standing brioche collapses under its own butter.','Cold dough is the whole trick. Never shape it warm.'),
+ R('challah','Challah','Braided, glossy, faintly sweet. Oil rather than butter.',['braided','dairy free'],700,2,
+  [['bread-flour',100],['water',30],['egg',25],['yolk',10],['neutral-oil',12],['sugar',12],['idy',1.5],['sea-salt',2]],
+  [['Mix to a smooth, slightly tacky dough. Knead ten minutes.',0],['Bulk until doubled.',1],['Divide into strands and braid firmly.',0],['Proof, egg wash twice, and seed heavily.',1]],
+  '175°C','30',0,'Two egg washes, 20 minutes apart, gives the deep lacquer.','Six strands looks better than three and is barely harder.'),
+ R('ciabatta','Ciabatta','Slack, wet, wildly open. Poured rather than shaped.',['very high hydration','no knead'],400,4,
+  [['bread-flour',100],['water',80],['olive-oil',2],['idy',0.6],['sea-salt',2.2]],
+  [['Mix to a batter-like dough. It should not hold shape.',0],['Four sets of folds in the bowl, 30 minutes apart.',1],['Tip onto a heavily floured bench and cut into rectangles.',0],['Proof on a couche, transfer upside down to the oven.',1]],
+  '250°C','22',0,'Handle as little as humanly possible. Every touch closes the crumb.','Flour the bench far more heavily than seems reasonable.'),
+ R('poolish-baguette','Poolish Baguette','Overnight preferment. Cream-coloured crumb, nutty crust.',['preferment','overnight'],320,4,
+  [['bread-flour',100],['water',70],['idy',0.5],['sea-salt',2]],
+  [['Build a poolish with a third of the flour and equal water. Ferment overnight.',1],['Mix the poolish with remaining flour, water, yeast and salt.',0],['Bulk two hours with folds.',1],['Divide, shape, proof and score.',1]],
+  '250°C','22',0,'Heavy steam early. Vent for the last eight minutes.','The poolish does more for flavour than any technique here.'),
+ R('dinner-rolls','Dinner Rolls','Soft, pull-apart, brushed with butter out of the oven.',['soft','pan rolls'],60,12,
+  [['ap-flour',100],['milk',55],['butter',12],['sugar',8],['egg',10],['idy',1.5],['sea-salt',2]],
+  [['Mix and knead to a soft, smooth dough.',0],['Bulk until doubled.',1],['Divide, roll tight, arrange touching in a pan.',0],['Proof until the rolls press against each other.',1]],
+  '180°C','20',0,'Brush with melted butter the second they leave the oven.','Rolling them tight is what gives the tall spring.'),
+ R('cinnamon-rolls','Cinnamon Rolls','Enriched dough, heavy cinnamon smear, baked tight together.',['sweet','filled'],110,9,
+  [['ap-flour',100],['milk',50],['butter',15],['sugar',12],['egg',15],['idy',1.8],['sea-salt',1.8],['brown-sugar',25],['cinnamon',2]],
+  [['Mix and knead the enriched dough. Bulk until doubled.',1],['Roll to a rectangle, spread butter, then brown sugar and cinnamon.',0],['Roll up tight, cut with thread rather than a knife.',0],['Proof in the pan until touching and puffy.',1]],
+  '180°C','26',0,'Underbake slightly. They firm up as they cool.','Thread instead of a knife keeps the spiral round.'),
+ R('yeast-focaccia','Focaccia','Same-day dimpled slab. Crisp base, steamy interior.',['same day','pan'],700,2,
+  [['bread-flour',100],['water',82],['olive-oil',6],['idy',0.8],['sea-salt',2.2]],
+  [['Mix in a bowl with wet hands. No kneading.',0],['Three sets of folds, 40 minutes apart.',1],['Oil the pan generously, stretch the dough to fill.',0],['Rest until bubbly, dimple hard, salt, bake.',1]],
+  '230°C','24',0,'The pan should look over-oiled. That is what fries the base.','Cold ferment overnight makes it better but it is fine same day.'),
+ R('bagels','Bagels','Stiff, low hydration, boiled before baking.',['boiled','malt'],120,8,
+  [['bread-flour',100],['water',56],['malt',3],['idy',1],['sea-salt',2]],
+  [['Mix a very stiff dough. It will fight the mixer.',0],['Bulk one hour, divide and shape rings.',1],['Cold retard the shaped rings overnight.',1],['Boil 45 seconds a side in malted water, then seed and bake.',1]],
+  '230°C','20',0,'Boil longer for a chewier crust. Do not skip the malt.','56% hydration feels wrong in the bowl and right in the mouth.'),
+ R('pretzels','Soft Pretzels','Alkaline bath, deep mahogany crust, coarse salt.',['lye bath','shaped'],100,8,
+  [['bread-flour',100],['water',55],['butter',4],['sugar',2],['idy',1.2],['sea-salt',2]],
+  [['Mix a stiff dough and knead until smooth.',0],['Bulk one hour, then roll long ropes and twist.',1],['Chill the shaped pretzels 30 minutes to firm up.',1],['Dip in the alkaline bath, salt, slash, and bake immediately.',0]],
+  '215°C','15',0,'Baked soda works safely at home. Real lye needs gloves and care.','Chilling before the bath keeps the shape crisp.')
+],
+pizza:[
+ R('neapolitan','Neapolitan Base','Long cold ferment. Puffy cornicione, thin centre, leopard spots.',['24h cold','00 flour'],250,6,
+  [['00-flour',100],['water',62],['levain',12,100],['sea-salt',2.8]],
+  [['Dissolve salt in the water, add flour and leaven, mix to a shaggy mass.',0],['Rest 20 minutes then knead until smooth.',1],['Bulk at room temperature.',1],['Divide into balls, box, cold ferment 24 hours.',1],['Temper before stretching.',1]],
+  '480°C','90','Seconds','Domestic oven: steel on the top rack at max heat, 6 to 7 minutes with a final broil.','62% is the sweet spot for hand stretching.'),
+ R('ny-style','New York Style','Foldable, chewy, a little oil and sugar in the dough.',['48h cold','foldable'],280,5,
+  [['bread-flour',100],['water',63],['olive-oil',3],['sugar',2],['idy',0.4],['sea-salt',2]],
+  [['Mix everything and knead to a smooth, elastic dough.',0],['Ball immediately and cold ferment 48 hours.',1],['Temper two hours before stretching.',1],['Stretch wide and thin, leaving a modest rim.',0]],
+  '290°C','8',0,'Bake on a steel as hot as the oven will go.','The oil is what makes the slice fold without cracking.'),
+ R('detroit','Detroit Style','Thick, airy, cheese caramelised against the pan wall.',['pan','high hydration'],450,2,
+  [['bread-flour',100],['water',70],['olive-oil',4],['idy',0.8],['sea-salt',2]],
+  [['Mix to a slack dough. No kneading needed.',0],['Bulk with two folds, then press into a heavily oiled steel pan.',1],['Rest until it fills the pan and jiggles.',1],['Edge with cheese all the way to the walls before topping.',0]],
+  '260°C','14',0,'The pan must be well oiled. That fried base is the entire point.','Blue steel pans beat non-stick by a wide margin.'),
+ R('roman-taglio','Roman Al Taglio','Very wet, very light, cut with scissors and sold by weight.',['very high hydration','tray'],600,2,
+  [['bread-flour',100],['water',80],['olive-oil',3],['idy',0.5],['sea-salt',2.2]],
+  [['Mix to a batter-like dough with wet hands.',0],['Four folds in the bowl, then cold ferment 24 hours.',1],['Tip gently into an oiled tray, stretch without degassing.',0],['Rest until bubbly, top lightly, bake hot.',1]],
+  '270°C','12',0,'Par-bake the base before topping for a crisper result.','Degassing kills it. Move the dough as little as possible.'),
+ R('sicilian','Sicilian Grandma','Rectangular, thick-ish, crisp fried underside.',['pan','same day'],450,2,
+  [['bread-flour',100],['water',68],['olive-oil',5],['idy',0.8],['sea-salt',2]],
+  [['Mix and knead briefly. Bulk 90 minutes.',1],['Press into an oiled sheet pan, rest 30 minutes, press again to the corners.',1],['Top with crushed tomato and hard cheese.',0]],
+  '250°C','18',0,'Two pressings. The dough will not reach the corners in one.','Sauce goes on top of the cheese, not under it.'),
+ R('deep-dish','Chicago Deep Dish','Laminated cornmeal crust, built upside down.',['pan','laminated'],550,2,
+  [['ap-flour',90],['cornmeal',10],['water',55],['butter',12],['sugar',2],['idy',1],['sea-salt',2]],
+  [['Mix a stiff dough with the cornmeal. Bulk one hour.',1],['Roll flat, spread with soft butter, roll up and coil. Chill.',1],['Press the coiled dough up the sides of a deep pan.',0],['Layer cheese first, then filling, then sauce on top.',0]],
+  '215°C','35',0,'Long, moderate bake. The crust must cook through under all that weight.','The butter lamination is what separates it from bread in a pan.'),
+ R('cracker-thin','Thin & Crispy','Low hydration, rolled paper thin, no rim at all.',['cracker crust','rolled'],200,4,
+  [['ap-flour',100],['water',45],['olive-oil',5],['sugar',1],['idy',0.4],['sea-salt',2]],
+  [['Mix a very stiff dough. Rest one hour only.',1],['Roll as thin as the pin will take it. Dock all over with a fork.',0],['Top sparingly. Weight is the enemy here.',0]],
+  '260°C','7',0,'Docking stops it puffing. Do it thoroughly.','Any more than 45% hydration and it stops being a cracker.'),
+ R('sourdough-pan','Sourdough Pan Pizza','Levain-leavened, thick, tangy, fried in the pan.',['levain','pan'],420,2,
+  [['bread-flour',100],['water',75],['levain',20,100],['olive-oil',4],['sea-salt',2]],
+  [['Mix and fold four times over three hours.',1],['Cold ferment overnight in the fridge.',1],['Press into an oiled pan and rest until puffy.',1],['Top and bake as hot as the oven allows.',0]],
+  '260°C','16',0,'The overnight retard is where the sourness develops.','Best crust of any pizza here, but it needs planning.'),
+ R('neapolitan-yeast','Neapolitan, 48h Yeast','Same profile, commercial yeast, tiny dose, long cold rest.',['48h cold','low yeast'],250,6,
+  [['00-flour',100],['water',65],['idy',0.15],['sea-salt',2.8]],
+  [['Dissolve salt in water, add flour, then the pinch of yeast.',0],['Knead briefly, bulk two hours at room temperature.',1],['Ball and cold ferment 48 hours.',1],['Temper three hours before baking.',1]],
+  '480°C','90','Seconds','Same bake as the levain version. Slightly less char tolerance.','More predictable than levain when the kitchen is cold.'),
+ R('ww-pizza','Whole Wheat Pizza','Nutty and sturdy. Holds heavy toppings without sagging.',['whole grain','sturdy'],260,5,
+  [['bread-flour',70],['ww-flour',30],['water',68],['olive-oil',3],['idy',0.5],['sea-salt',2]],
+  [['Autolyse the flours and water 45 minutes.',1],['Add yeast, salt and oil, knead to smooth.',0],['Bulk two hours, ball, cold ferment 24 hours.',1]],
+  '280°C','8',0,'Whole wheat browns faster. Watch the rim closely.','30% is the ceiling before it turns heavy.')
+],
+pastry:[
+ R('croissant','Croissant Dough','Three single folds. Honeycomb crumb, shattering exterior.',['laminated','overnight'],80,12,
+  [['bread-flour',70],['ap-flour',30],['milk',55],['lam-butter',50],['sugar',10],['butter',5],['idy',1.6],['sea-salt',2]],
+  [['Mix the detrempe to a shaggy dough. Do not develop it. Chill overnight.',1],['Beat the lamination butter into a flat pliable slab.',0],['Lock in and give three single folds, resting 45 minutes between each.',1],['Sheet to 4 mm, cut triangles, roll.',0],['Proof at 24 to 26°C until visibly jiggly.',1]],
+  '200°C','18',0,'Drop to 180°C after 10 minutes. Butter must never break through.','The 45-minute rests are non-negotiable.'),
+ R('pain-choc','Pain au Chocolat','Same laminated dough, rectangular, two batons inside.',['laminated','chocolate'],85,12,
+  [['bread-flour',70],['ap-flour',30],['milk',55],['lam-butter',50],['sugar',10],['butter',5],['idy',1.6],['sea-salt',2]],
+  [['Build and laminate exactly as croissant dough.',1],['Sheet to 4 mm and cut rectangles rather than triangles.',0],['Lay two chocolate batons and roll, seam underneath.',0],['Proof until jiggly, egg wash, bake.',1]],
+  '200°C','18',0,'Seam side down or they unroll in the oven.','Rectangles are far more forgiving than triangles to shape.'),
+ R('danish','Danish Pastry','Enriched laminated dough with cardamom. Softer than croissant.',['laminated','cardamom'],75,12,
+  [['bread-flour',60],['ap-flour',40],['milk',40],['egg',15],['lam-butter',45],['sugar',12],['idy',2],['sea-salt',1.8],['cardamom',1]],
+  [['Mix the dough with the cardamom. Chill thoroughly.',1],['Lock in the butter and give three single folds.',1],['Sheet, cut, and shape into pinwheels or envelopes.',0],['Fill, proof, egg wash, bake.',1]],
+  '200°C','16',0,'Egg richer than croissant dough, so it colours faster.','Freshly ground cardamom is worth the trouble.'),
+ R('rough-puff','Rough Puff Pastry','Butter chunks worked in cold. Faster than classic puff.',['laminated','quick'],250,4,
+  [['ap-flour',100],['lam-butter',80],['water',50],['sea-salt',2]],
+  [['Rub cold butter into the flour, leaving large visible pieces.',0],['Add water and bring together roughly. Do not smooth it.',0],['Give four book folds with 30 minute chills between each.',1],['Rest fully chilled before rolling out.',1]],
+  '210°C','25',0,'Bake hot from cold or the butter melts before it steams.','Visible butter streaks in the dough are correct, not a mistake.'),
+ R('pate-brisee','Pâte Brisée','Savoury short crust. Tender, no sugar, quiche and tart shells.',['short crust','savoury'],300,2,
+  [['ap-flour',100],['butter',65],['water',22],['sea-salt',2]],
+  [['Cut cold butter into the flour until sandy with pea-sized pieces.',0],['Add ice water and bring together with as few strokes as possible.',0],['Chill at least one hour before rolling.',1],['Blind bake with weights before filling.',1]],
+  '190°C','20',0,'Freeze the shell for 15 minutes before blind baking to stop shrinkage.','Overworking is the only way to ruin this.'),
+ R('pate-sucree','Pâte Sucrée','Sweet, crisp, almost biscuit. Fruit tarts and lemon tarts.',['sweet crust','tart'],280,2,
+  [['ap-flour',100],['butter',55],['powdered-sugar',35],['egg',18],['sea-salt',1]],
+  [['Cream the butter and sugar, then add the egg.',0],['Add the flour and stop the moment it comes together.',0],['Chill flat, roll cold, line the tin.',1],['Blind bake to a full golden colour.',1]],
+  '175°C','22',0,'Bake it darker than feels right. Pale sucrée goes soggy under filling.','Rolling between parchment saves a lot of swearing.'),
+ R('choux','Choux Paste','Cooked paste, dried on the heat, raised entirely by steam.',['cooked paste','steam raised'],40,16,
+  [['ap-flour',100],['water',120],['butter',75],['egg',175],['sugar',4],['sea-salt',2]],
+  [['Boil water, butter, sugar and salt. Add flour all at once.',0],['Cook the paste on the heat until it films the pan base.',0],['Cool to warm, then beat in egg gradually to a V-shaped ribbon.',0],['Pipe and bake without opening the oven.',1]],
+  '200°C','30',0,'Drop to 175°C after 15 minutes. Opening the door early collapses them.','Drying the paste properly matters more than the egg quantity.'),
+ R('eclair','Éclair Shells','Piped long, split for filling. Same paste, tighter discipline.',['piped','choux'],45,14,
+  [['ap-flour',100],['water',120],['butter',75],['egg',170],['sugar',4],['sea-salt',2]],
+  [['Make the paste as for choux, slightly stiffer.',0],['Pipe even lengths with a star tip to control splitting.',0],['Bake without opening the door, then vent and dry out.',1]],
+  '200°C','32',0,'Pierce the base as they leave the oven so steam escapes.','A star tip gives straighter shells than a plain round.'),
+ R('scones','Cream Scones','Cold butter, minimal handling, tall and flaky.',['quick','cream'],85,8,
+  [['ap-flour',100],['butter',30],['cream',55],['sugar',12],['bp',5],['sea-salt',1.5]],
+  [['Rub cold butter into the dry ingredients to coarse crumbs.',0],['Add cream and bring together barely.',0],['Pat to 3 cm, cut straight down without twisting.',0],['Chill 20 minutes, then bake hot.',1]],
+  '210°C','16',0,'Twisting the cutter seals the edge and stops the rise.','Chilling before baking is what gives the height.'),
+ R('biscuits','Buttermilk Biscuits','Laminated by folding. Layers you can peel apart.',['quick','laminated fold'],75,9,
+  [['ap-flour',100],['butter',35],['buttermilk',65],['bp',5],['bs',0.5],['sea-salt',2]],
+  [['Grate frozen butter into the dry ingredients.',0],['Add buttermilk, bring together, then fold the dough over itself four times.',0],['Cut straight down and place touching on the tray.',0]],
+  '220°C','14',0,'Sides touching forces them upward instead of outward.','Grated frozen butter beats cubed every time.'),
+ R('morning-buns','Morning Buns','Laminated dough rolled with cinnamon sugar, baked in muffin tins.',['laminated','cinnamon'],90,12,
+  [['bread-flour',70],['ap-flour',30],['milk',50],['lam-butter',45],['sugar',10],['idy',1.8],['sea-salt',2],['cinnamon',2]],
+  [['Laminate as croissant dough with three folds.',1],['Sheet, spread cinnamon sugar, roll into a log.',0],['Cut and place cut side up in buttered muffin tins.',0],['Proof until puffy and bake.',1]],
+  '190°C','22',0,'Sugar in the tin caramelises into the crust. Butter them well.','Turn them out immediately or the caramel welds them in.'),
+ R('kouign-amann','Kouign-Amann','Laminated with sugar. Caramelised, crunchy, obscene.',['laminated','caramelised'],95,10,
+  [['bread-flour',100],['water',55],['lam-butter',50],['sugar',45],['idy',1.5],['sea-salt',2]],
+  [['Make a simple lean dough and chill.',1],['Lock in butter, then fold with sugar dusted into each turn.',1],['Cut squares, fold corners in, place in buttered rings.',0],['Proof, then bake until the sugar runs dark.',1]],
+  '200°C','28',0,'Bake on a lined tray. The caramel will run and it will burn onto bare metal.','The sugar folds are what makes it. Do not be shy with them.'),
+ R('palmiers','Palmiers','Puff pastry rolled in sugar, folded, sliced, caramelised flat.',['puff','two ingredient'],35,20,
+  [['ap-flour',100],['lam-butter',80],['water',48],['sugar',40],['sea-salt',1.5]],
+  [['Laminate a rough puff, using sugar instead of flour to roll.',1],['Fold both sides to the centre twice and chill firm.',1],['Slice 1 cm thick and lay flat with space to spread.',0],['Flip halfway through the bake to caramelise both sides.',1]],
+  '200°C','20',0,'They will spread to twice the width. Space generously.','Flipping is essential for even caramelisation.'),
+ R('galette','Galette Dough','Rustic free-form tart base. Sturdy enough to hold fruit.',['free form','fruit'],320,2,
+  [['ap-flour',100],['butter',60],['water',25],['sugar',4],['sea-salt',2]],
+  [['Rub in butter leaving flat sheets rather than crumbs.',0],['Add water, bring together, chill one hour.',1],['Roll a rough round, pile fruit centre, fold the edge over.',0],['Chill again before baking to set the folds.',1]],
+  '200°C','40',0,'A layer of ground nuts under the fruit stops a soggy base.','Flat butter sheets give the flaky layers here.'),
+ R('empanada','Empanada Dough','Sturdy, slightly tender, holds a wet filling without leaking.',['savoury','filled'],60,12,
+  [['ap-flour',100],['butter',30],['water',35],['egg',12],['sea-salt',2]],
+  [['Rub the butter in, then bind with egg and water.',0],['Knead briefly to a smooth dough, rest one hour.',1],['Roll thin, cut discs, fill and crimp firmly.',0]],
+  '200°C','22',0,'Egg wash gives colour. Crimp tightly or they burst.','Rest the dough or it shrinks back as you fill it.'),
+ R('strudel','Strudel Dough','Stretched translucent by hand. Almost no fat in the dough.',['stretched','thin'],400,2,
+  [['ap-flour',100],['water',45],['neutral-oil',12],['sea-salt',1.5]],
+  [['Knead hard for ten minutes until glossy and very elastic.',0],['Rest under oil for one hour minimum.',1],['Stretch over a floured cloth until you can read through it.',0],['Brush with butter, fill, and roll using the cloth.',0]],
+  '190°C','40',0,'Brush with butter between every roll for separate layers.','The long rest is what lets it stretch without tearing.'),
+ R('rugelach','Rugelach','Cream cheese dough. Tender, tangy, rolled around filling.',['cream cheese','rolled'],30,24,
+  [['ap-flour',100],['butter',50],['cream-cheese',50],['sugar',10],['sea-salt',1.5]],
+  [['Beat butter and cream cheese smooth, then add flour.',0],['Chill in discs at least three hours.',1],['Roll thin, cut wedges, spread filling and roll from the wide end.',0],['Chill the shaped pieces before baking.',1]],
+  '180°C','24',0,'Chilling shaped pieces stops the filling running out.','The dough is unworkable unless properly cold.'),
+ R('almond-shortcrust','Almond Shortcrust','Nutty, fragile, excellent under set custards.',['nut crust','tart'],300,2,
+  [['ap-flour',80],['almond-flour',20],['butter',55],['powdered-sugar',30],['egg',15],['sea-salt',1]],
+  [['Cream butter and sugar, add egg, then both flours.',0],['Press into the tin rather than rolling. It tears easily.',0],['Freeze the shell, then blind bake.',1]],
+  '170°C','25',0,'Lower temperature than plain sucrée. The almond browns fast.','Pressing in beats rolling for this one.'),
+ R('brioche-feuilletee','Brioche Feuilletée','Brioche dough laminated with butter. Rich twice over.',['laminated','enriched'],90,10,
+  [['bread-flour',100],['egg',40],['milk',15],['lam-butter',50],['sugar',12],['idy',2],['sea-salt',2]],
+  [['Make a firm brioche dough and chill overnight.',1],['Laminate with three single folds, keeping everything cold.',1],['Shape into twists or tin loaves.',0],['Proof slowly and bake covered if it colours early.',1]],
+  '180°C','30',0,'Very rich, so it burns before it cooks. Tent early.','Colder than croissant dough throughout or the butter leaks.'),
+ R('cinnamon-twists','Cinnamon Twists','Puff pastry, cinnamon sugar, twisted and baked crisp.',['puff','quick'],40,16,
+  [['ap-flour',100],['lam-butter',70],['water',48],['sugar',30],['cinnamon',3],['sea-salt',1.5]],
+  [['Laminate a rough puff with four book folds.',1],['Roll out, cover half with cinnamon sugar, fold over and press.',0],['Cut strips, twist each twice, and chill.',1]],
+  '200°C','18',0,'Press the twists onto the tray so they hold their shape.','Twist tighter than feels right, they relax in the oven.')
+],
+cakes:[
+ R('bb-choc-chip','Brown Butter Chocolate Chip','Deep toffee notes, crisp edge, soft centre. Rests overnight.',['brown butter','overnight rest'],55,16,
+  [['ap-flour',100],['brown-butter',65],['brown-sugar',55],['sugar',30],['dark-choc',70],['egg',30],['yolk',12],['vanilla',3],['bs',1],['sea-salt',1.6]],
+  [['Brown the butter until the solids are hazelnut coloured. Cool.',1],['Whisk with both sugars, then egg, yolk and vanilla until glossy.',0],['Fold in flour, soda and salt. Stop while flour still shows.',0],['Fold in chocolate and rest overnight in the fridge.',1],['Scoop, space well, flake salt on top.',0]],
+  '190°C','11',0,'Pull them while the centres look underdone. They set on the tray.','The overnight rest is what makes them taste of toffee.'),
+ R('classic-cc','Classic Chocolate Chip','The standard. Chewy centre, crisp edge, no waiting.',['same day','classic'],50,18,
+  [['ap-flour',100],['butter',65],['brown-sugar',45],['sugar',40],['choc-chips',75],['egg',30],['vanilla',3],['bs',1.2],['sea-salt',1.5]],
+  [['Cream softened butter with both sugars until pale.',0],['Beat in egg and vanilla.',0],['Fold in flour, soda and salt, then the chips.',0],['Scoop and bake straight away.',1]],
+  '180°C','12',0,'Rotate the tray halfway. Edges set before centres.','Chilling an hour improves them but is not required.'),
+ R('oatmeal-raisin','Oatmeal Raisin','Chewy, spiced, heavy on oats.',['oats','spiced'],55,18,
+  [['ap-flour',100],['oats',80],['butter',65],['brown-sugar',60],['sugar',25],['raisins',60],['egg',30],['vanilla',3],['cinnamon',2],['bs',1.2],['sea-salt',1.5]],
+  [['Soak the raisins in hot water ten minutes, then drain.',1],['Cream butter and sugars, add egg and vanilla.',0],['Fold in the dry ingredients, then oats and raisins.',0],['Rest 30 minutes so the oats hydrate.',1]],
+  '180°C','13',0,'Soaked raisins stay plump instead of burning.','The oat rest changes the texture completely.'),
+ R('snickerdoodle','Snickerdoodles','Cream of tartar tang, cinnamon sugar crust, crackled top.',['tangy','rolled'],50,20,
+  [['ap-flour',100],['butter',55],['sugar',70],['egg',25],['cinnamon',2],['tartar',2],['bs',1],['sea-salt',1.2]],
+  [['Cream butter and sugar, beat in the egg.',0],['Fold in flour, tartar, soda and salt.',0],['Roll balls in cinnamon sugar and bake without flattening.',0]],
+  '180°C','10',0,'Underbake by a minute for the classic soft centre.','Cream of tartar is what makes it a snickerdoodle, not a sugar cookie.'),
+ R('shortbread','Shortbread','Three ingredients plus salt. Sandy, buttery, restrained.',['three ingredient','sandy'],35,20,
+  [['ap-flour',100],['butter',65],['powdered-sugar',33],['vanilla',2],['sea-salt',1.5]],
+  [['Cream butter and sugar only briefly. Too much air ruins the texture.',0],['Add flour and salt, bring together, press into a tin.',0],['Dock all over and chill until firm.',1],['Bake pale, cut while warm.',1]],
+  '160°C','35',0,'Low and slow. Any colour beyond pale gold is too far.','Cut it warm or it shatters.'),
+ R('sugar-cookies','Sugar Cookies','Rolled and cut. Holds a sharp edge for decorating.',['rolled','cut out'],40,20,
+  [['ap-flour',100],['butter',55],['sugar',60],['egg',20],['vanilla',3],['bp',2],['sea-salt',1.2]],
+  [['Cream butter and sugar, add egg and vanilla.',0],['Add dry ingredients and stop as soon as it comes together.',0],['Roll between parchment and chill flat.',1],['Cut shapes and freeze ten minutes before baking.',1]],
+  '175°C','11',0,'Freezing cut shapes is what keeps the edges sharp.','No leavening beyond a little powder or the detail blurs.'),
+ R('double-choc','Double Chocolate','Cocoa in the dough, chunks through it. Fudgy centre.',['cocoa','fudgy'],55,16,
+  [['ap-flour',100],['cocoa',30],['butter',60],['brown-sugar',55],['sugar',25],['dark-choc',70],['egg',35],['bs',1.2],['sea-salt',1.5]],
+  [['Cream butter and sugars, beat in the egg.',0],['Sift in flour, cocoa, soda and salt.',0],['Fold in the chopped chocolate.',0],['Chill one hour, then scoop and bake.',1]],
+  '180°C','11',0,'Hard to judge by colour. Go by the set edge instead.','Cocoa dries the dough, so do not overbake.'),
+ R('gingerbread','Gingerbread Cookies','Molasses, ginger, snap. Rolls thin and holds shape.',['spiced','rolled'],40,20,
+  [['ap-flour',100],['butter',40],['brown-sugar',40],['molasses',30],['egg',15],['ginger',3],['cinnamon',3],['bs',1.2],['sea-salt',1.2]],
+  [['Cream butter and sugar, add molasses and egg.',0],['Add the dry ingredients and spices.',0],['Chill the dough overnight to hydrate the spices.',1],['Roll thin, cut, and bake until just firm at the edge.',1]],
+  '175°C','10',0,'Thin rolling gives snap. Thick gives a soft cookie.','The overnight chill deepens the spice noticeably.'),
+ R('biscotti','Biscotti','Twice baked, dry, built for dunking.',['twice baked','almond'],35,24,
+  [['ap-flour',100],['sugar',55],['egg',45],['almonds',35],['bp',3],['vanilla',3],['sea-salt',1]],
+  [['Whisk eggs and sugar, then fold in flour, powder and nuts.',0],['Shape two logs on a tray and bake until just firm.',1],['Cool 15 minutes, slice on the diagonal.',1],['Lay the slices flat and bake again to dry.',1]],
+  '165°C','22',0,'Second bake at 150°C for 15 minutes a side.','Slicing warm avoids shattering the logs.'),
+ R('brownies','Brownies','Melted chocolate base. Dense, glossy crust, fudgy centre.',['fudgy','tray bake'],60,16,
+  [['ap-flour',100],['dark-choc',200],['butter',150],['sugar',200],['egg',150],['cocoa',30],['vanilla',5],['sea-salt',3]],
+  [['Melt the chocolate and butter together and cool slightly.',0],['Whisk sugar and eggs hard for four minutes until thick and pale.',0],['Fold the chocolate in, then flour, cocoa and salt.',0],['Bake until the centre is barely set, then cool completely.',1]],
+  '175°C','28',0,'The whisked egg and sugar is what gives the papery crust.','Cool fully before cutting or they smear.'),
+ R('blondies','Blondies','Brown sugar and butter, no cocoa. Chewy edge to edge.',['brown sugar','tray bake'],55,16,
+  [['ap-flour',100],['butter',70],['brown-sugar',110],['choc-chips',60],['egg',50],['vanilla',4],['bp',2],['sea-salt',2]],
+  [['Melt the butter and whisk with brown sugar until smooth.',0],['Beat in eggs and vanilla.',0],['Fold in flour, powder and salt, then the chips.',0],['Bake until the edges pull away and the centre wobbles slightly.',1]],
+  '175°C','25',0,'Underbake slightly. They firm up considerably as they cool.','Melted butter rather than creamed is what makes them chewy.'),
+ R('butter-cake','Vanilla Butter Cake','Fine even crumb. The base for layer cakes.',['layer cake','creaming'],450,2,
+  [['cake-flour',100],['butter',55],['sugar',90],['milk',60],['egg',55],['bp',4],['vanilla',4],['sea-salt',1.5]],
+  [['Cream butter and sugar for a full five minutes until very pale.',0],['Add eggs one at a time, scraping between each.',0],['Alternate flour and milk in three additions, ending with flour.',0],['Divide between tins and bake until it springs back.',1]],
+  '175°C','28',0,'Overmixing after the flour goes in makes it tough. Fold gently.','Five minutes of creaming really does matter here.'),
+ R('choc-layer','Chocolate Layer Cake','Oil-based, hot coffee bloomed cocoa. Stays moist for days.',['oil based','moist'],450,2,
+  [['ap-flour',100],['cocoa',35],['sugar',130],['buttermilk',90],['neutral-oil',45],['egg',55],['coffee',45],['bs',2],['bp',2],['sea-salt',2]],
+  [['Whisk all the dry ingredients together thoroughly.',0],['Add buttermilk, oil and eggs and whisk to smooth.',0],['Pour in the hot coffee last. The batter will be very thin.',0],['Bake and cool fully in the tins.',1]],
+  '175°C','32',0,'A thin batter is correct. Do not add flour to thicken it.','Hot coffee blooms the cocoa. Do not skip or cool it.'),
+ R('carrot-cake','Carrot Cake','Oil, spice, nuts. Dense and forgiving.',['spiced','oil based'],500,2,
+  [['ap-flour',100],['neutral-oil',75],['sugar',70],['brown-sugar',40],['egg',55],['walnuts',35],['cinnamon',3],['bs',2],['bp',2],['sea-salt',2]],
+  [['Whisk oil, sugars and eggs until emulsified.',0],['Fold in the dry ingredients and spices.',0],['Fold in grated carrot and toasted walnuts.',0],['Bake and cool fully before frosting.',1]],
+  '175°C','35',0,'Weigh the grated carrot at roughly 130% of the flour weight.','Squeeze wet carrots or the crumb turns soggy.'),
+ R('banana-bread','Banana Bread','Loaf tin, very ripe fruit, walnuts through.',['loaf','quick bread'],900,1,
+  [['ap-flour',100],['brown-sugar',55],['butter',40],['egg',35],['walnuts',30],['vanilla',3],['bs',2],['sea-salt',1.5]],
+  [['Mash very ripe bananas, roughly 120% of the flour weight.',0],['Melt the butter and mix with sugar, egg and banana.',0],['Fold in flour, soda and salt, then the walnuts.',0],['Bake in a lined loaf tin until a skewer comes out clean.',1]],
+  '175°C','55',0,'Tent with foil at 35 minutes if the top darkens early.','The blacker the bananas, the better the loaf.'),
+ R('pound-cake','Pound Cake','Equal weights of flour, butter, sugar and egg.',['classic ratio','loaf'],900,1,
+  [['ap-flour',100],['butter',100],['sugar',100],['egg',100],['vanilla',3],['bp',1],['sea-salt',1.5]],
+  [['Have every ingredient at exactly room temperature.',0],['Cream butter and sugar for six minutes until very light.',0],['Add egg extremely slowly to avoid splitting.',0],['Fold in flour and bake low and slow.',1]],
+  '160°C','60',0,'Cold eggs split the batter. That is the one failure mode.','Low and slow, or the outside sets before the middle rises.'),
+ R('lemon-drizzle','Lemon Drizzle','Zest through the crumb, syrup poured over hot.',['citrus','syrup soaked'],900,1,
+  [['ap-flour',100],['sugar',90],['butter',70],['egg',65],['milk',20],['zest',6],['bp',3],['sea-salt',1.2]],
+  [['Rub the zest into the sugar first to release the oils.',0],['Cream with butter, then add eggs gradually.',0],['Fold in flour and milk, bake in a lined loaf tin.',1],['Pierce all over and pour lemon syrup over while hot.',0]],
+  '170°C','45',0,'The cake must be hot and the syrup cold for it to soak in.','Rubbing zest into sugar doubles the citrus flavour.'),
+ R('coffee-cake','Sour Cream Coffee Cake','Cinnamon streusel ripple. Tender from the sour cream.',['streusel','brunch'],900,1,
+  [['ap-flour',100],['sour-cream',70],['sugar',70],['butter',50],['egg',40],['brown-sugar',30],['cinnamon',3],['bp',3],['bs',1],['sea-salt',1.5]],
+  [['Cream butter and sugar, add eggs, then sour cream.',0],['Fold in the dry ingredients.',0],['Layer half the batter, all the cinnamon streusel, then the rest.',0],['Bake until a skewer comes out with a few crumbs.',1]],
+  '175°C','45',0,'Reserve some streusel for the top as well as the middle.','Sour cream is what keeps it tender for days.'),
+ R('madeleines','Madeleines','Hump-backed, buttery, best eaten within the hour.',['shell tin','chilled batter'],25,20,
+  [['ap-flour',100],['egg',100],['sugar',90],['butter',90],['zest',4],['bp',3],['sea-salt',1]],
+  [['Whisk eggs and sugar to a thick ribbon.',0],['Fold in flour, powder and zest, then the warm melted butter.',0],['Chill the batter at least four hours, ideally overnight.',1],['Pipe into a cold buttered tin and bake immediately.',1]],
+  '200°C','9',0,'Cold batter into a hot oven is what creates the hump.','Butter and flour the tin properly or they weld in.'),
+ R('rye-chunk','Rye Chocolate Chunk','Rye flour against dark chocolate. Earthy and less sweet.',['rye','dark chocolate'],55,16,
+  [['rye-flour',100],['dark-choc',80],['butter',60],['brown-sugar',55],['sugar',25],['egg',30],['bs',1.2],['sea-salt',2]],
+  [['Cream butter and sugars, beat in the egg.',0],['Fold in the rye flour, soda and salt.',0],['Fold in chopped chocolate and rest the dough overnight.',1],['Scoop, salt the tops, bake.',0]],
+  '185°C','12',0,'Rye spreads more than wheat. Space them generously.','Less sweet than a wheat cookie, which is the point.')
+]
+};
+
+/* ============ STATE ============ */
+let S = { cat:'sourdough', view:'col', rec:null, ing:[], dough:1800, items:2, leaven:'levain' };
+let RECENT = [];
+const custom = {sourdough:[],yeasted:[],pizza:[],pastry:[],cakes:[]};
+
+const r=(n,d=0)=>{const f=Math.pow(10,d);return Math.round(n*f)/f;};
+const fmt=n=>n.toLocaleString('en-US');
+function gDisp(g){ return g<10 ? r(g,1).toFixed(1) : fmt(r(g)); }
+function frac(n){ const w=Math.floor(n); let q=Math.round((n-w)*4)/4; let ww=w;
+  if(q===1){ww++;q=0;} const m={0:'',0.25:'¼',0.5:'½',0.75:'¾'};
+  if(ww===0) return m[q]||'0'; return ww+(q?' '+m[q]:''); }
+function spoons(g,tsp){ if(!tsp) return ''; if(g<0.35) return 'a pinch';
+  const t=g/tsp; if(t<3) return '≈ '+frac(t)+' tsp';
+  const tb=t/3; if(tb<=8) return '≈ '+frac(tb)+' tbsp'; return ''; }
+const meta=k=>META[k];
+const flours=()=>S.ing.filter(i=>meta(i.k).g==='flour');
+const nonFlourSum=()=>S.ing.filter(i=>meta(i.k).g!=='flour').reduce((s,i)=>s+i.p,0);
+const flourWeight=()=>flours().length? S.dough/((100+nonFlourSum())/100) : 0;
+const stepFor=k=>meta(k).max<=10?0.1:1;
+const allRecipes=c=>RECIPES[c].concat(custom[c]);
+
+function tint(cat,i){ const c=CATS[cat].colour;
+  const a=[0.10,0.18,0.26][i%3];
+  return 'linear-gradient(145deg, rgba(28,26,24,0.04), '+hexA(c,a)+')'; }
+function hexA(h,a){ const n=parseInt(h.slice(1),16);
+  return 'rgba('+(n>>16)+','+((n>>8)&255)+','+(n&255)+','+a+')'; }
+
+function setFlour(key,val){
+  const fl=flours(), t=fl.find(f=>f.k===key);
+  val=Math.max(0,Math.min(100,val));
+  const others=fl.filter(f=>f!==t); t.p=val;
+  if(!others.length){ t.p=100; return; }
+  const remain=100-val, os=others.reduce((s,f)=>s+f.p,0);
+  if(os===0){ others[0].p=remain; others.slice(1).forEach(f=>f.p=0); }
+  else others.forEach(f=>f.p=Math.round(remain*(f.p/os)));
+  const d=100-fl.reduce((s,f)=>s+f.p,0);
+  if(d!==0){ const fix=others.reduce((a,b)=>a.p>=b.p?a:b); fix.p=Math.max(0,fix.p+d); }
+}
+
+/* ============ COLLECTION ============ */
+function showCollection(){
+  S.view='col';
+  $('colView').classList.remove('hidden');
+  $('recView').classList.add('hidden');
+  $('backBtn').classList.add('hidden');
+  $('catBtn').classList.remove('hidden');
+  const C=CATS[S.cat], list=allRecipes(S.cat);
+  $('colTitle').textContent=C.label;
+  $('colCount').textContent=list.length+' formulas';
+  $('allLabel').textContent='All '+C.label.toLowerCase();
+
+  if(RECENT.length>=1){
+    $('recentSec').classList.remove('hidden');
+    $('recentGrid').innerHTML=RECENT.slice(0,2).map((rc,ix)=>{
+      const rec=allRecipes(rc.cat).find(x=>x.id===rc.id); if(!rec) return '';
+      return '<button class="rcard" data-open="'+rc.cat+'|'+rc.id+'">'+
+        '<div class="thumb" style="background:'+tint(rc.cat,ix)+'"><div class="cam">Add photo</div></div>'+
+        '<div class="m"><div class="cat" style="color:'+CATS[rc.cat].colour+'">'+CATS[rc.cat].label+'</div>'+
+        '<div class="t">'+rec.t+'</div></div></button>';
+    }).join('');
+  } else $('recentSec').classList.add('hidden');
+
+  $('recipeList').innerHTML=list.map((rec,ix)=>{
+    const fl=rec.ing.filter(x=>meta(x[0]) && meta(x[0]).g==='flour').length;
+    const liq=rec.ing.filter(x=>meta(x[0]) && meta(x[0]).g==='liquid').reduce((s,x)=>s+x[1],0);
+    const stat = liq>0 ? liq+'%' : rec.ing.length+' ing';
+    return '<button class="rrow" data-open="'+S.cat+'|'+rec.id+'">'+
+      '<div class="th" style="background:'+tint(S.cat,ix)+'"></div>'+
+      '<div class="info"><div class="n">'+rec.t+'</div><div class="s">'+rec.s+'</div></div>'+
+      '<div class="stat">'+stat+'</div></button>';
+  }).join('');
+
+  document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{
+    const [c,id]=b.dataset.open.split('|'); openRecipe(c,id); });
+}
+
+function openRecipe(cat,id){
+  const rec=allRecipes(cat).find(x=>x.id===id); if(!rec) return;
+  S.cat=cat; S.rec=rec; document.body.dataset.cat=cat;
+  S.ing=rec.ing.map(x=>({k:x[0],p:x[1],lh:x[2]||100}));
+  S.items=rec.n; S.dough=rec.n*rec.w; S.leaven='levain';
+  RECENT=RECENT.filter(x=>!(x.cat===cat&&x.id===id)); RECENT.unshift({cat,id});
+  RECENT=RECENT.slice(0,6);
+  S.view='rec';
+  $('colView').classList.add('hidden');
+  $('recView').classList.remove('hidden');
+  $('backBtn').classList.remove('hidden');
+  $('catBtn').classList.add('hidden');
+  window.scrollTo(0,0);
+  buildRecipe(); buildLedger(); update();
+}
+
+function newRecipe(){
+  const C=CATS[S.cat];
+  const rec=R('custom-'+Date.now(),'Untitled '+C.label,'Tap to describe this bake.',['new'],
+    C.itemW,C.items,C.seed.map(x=>[x[0],x[1],x[2]]),
+    [['Add your method here.',0]],'180°C','30',0,'Add bake notes here.','Add your notes here.');
+  custom[S.cat].push(rec);
+  openRecipe(S.cat,rec.id);
+  toast(C.builder?'Blank formula — add ingredients':'Common ingredients added at 0%');
+}
+
+/* ============ RECIPE SCREEN ============ */
+function buildRecipe(){
+  const C=CATS[S.cat], rec=S.rec;
+  $('kicker').textContent=C.label;
+  $('title').textContent=rec.t;
+  $('subtitle').textContent=rec.s;
+  $('tags').innerHTML=rec.g.map(t=>'<span class="tag">'+t+'</span>').join('');
+  $('yieldLabel').textContent=C.noun;
+  $('photo').style.background=tint(S.cat,0);
+  $('method').innerHTML=rec.st.map((s,i)=>
+    '<div class="stp"><div class="stp-n">'+(i+1)+'</div><div><div class="stp-t">'+s[0]+'</div>'+
+    (s[1]?'<button class="timer">▸ Set timer</button>':'')+'</div></div>').join('');
+  $('bake').innerHTML=rec.bake.map(b=>'<div><div class="n">'+b[0]+'</div><div class="l">'+b[1]+'</div></div>').join('');
+  $('bakeNote').textContent=rec.bn;
+  $('notes').textContent=rec.nt;
+  $('stamp').textContent='Updated 30 Jul 2026';
+  if(C.leavenChoice){
+    $('segWrap').innerHTML='<div class="seg">'+['levain','yeast','both'].map(m=>
+      '<button data-lv="'+m+'"'+(S.leaven===m?' class="on"':'')+'>'+
+      (m==='levain'?'Levain':m==='yeast'?'Yeast':'Both')+'</button>').join('')+'</div>';
+    $('segWrap').querySelectorAll('button').forEach(b=>b.onclick=()=>setLeaven(b.dataset.lv));
+  } else $('segWrap').innerHTML='';
+  document.querySelectorAll('.timer').forEach(b=>b.onclick=()=>toast('Timers get wired up in the full app'));
+  $('title').oninput=()=>{ rec.t=$('title').textContent; };
+  $('subtitle').oninput=()=>{ rec.s=$('subtitle').textContent; };
+  $('notes').oninput=()=>{ rec.nt=$('notes').textContent; };
+}
+
+function setLeaven(mode){
+  S.leaven=mode;
+  S.ing=S.ing.filter(i=>i.k!=='levain'&&i.k!=='idy');
+  const si=S.ing.findIndex(i=>meta(i.k).g==='salt'), add=[];
+  if(mode==='levain') add.push({k:'levain',p:12,lh:100});
+  if(mode==='yeast') add.push({k:'idy',p:0.2,lh:100});
+  if(mode==='both'){ add.push({k:'levain',p:8,lh:100}); add.push({k:'idy',p:0.1,lh:100}); }
+  if(si>=0) S.ing.splice(si,0,...add); else S.ing.push(...add);
+  buildRecipe(); buildLedger(); update();
+}
+
+function canRemove(k){ return meta(k).g!=='flour' || flours().length>1; }
+
+function buildLedger(){
+  const L=$('ledger'); L.innerHTML='';
+  if(!S.ing.length){
+    L.innerHTML='<div class="empty">No ingredients yet.<br>Add your first one below.</div>'; return;
+  }
+  GROUPS.forEach(gr=>{
+    const items=S.ing.filter(i=>meta(i.k).g===gr); if(!items.length) return;
+    const h=document.createElement('div'); h.className='grp'; h.textContent=GRP_LABEL[gr]; L.appendChild(h);
+    if(gr==='flour'){ const ft=document.createElement('div'); ft.className='ftotal';
+      ft.innerHTML='<div class="n">Total flour</div><div class="f"><span class="pct">100%</span>'+
+        '<span class="g" id="fTotal">0</span><span class="u">g</span></div>'; L.appendChild(ft); }
+    items.forEach(it=>{
+      const m=meta(it.k), st=stepFor(it.k), mx=m.g==='flour'?100:m.max;
+      const row=document.createElement('div'); row.className='ing';
+      row.innerHTML='<div class="ing-top"><div class="ing-name">'+m.n+
+        (m.levain?'<span class="hint" data-lh="'+it.k+'"></span>':'')+'</div>'+
+        '<div class="ing-f"><span class="pct" data-pct="'+it.k+'"></span>'+
+        '<span class="g" data-g="'+it.k+'"></span><span class="u">g</span></div>'+
+        (canRemove(it.k)?'<button class="rm" data-rm="'+it.k+'">✕</button>':'')+'</div>'+
+        (m.tsp?'<div class="spoon" data-sp="'+it.k+'"></div>':'')+
+        '<div class="bar"><div class="track"></div><div class="fill" data-fill="'+it.k+'"></div>'+
+        '<div class="ends"><span>0%</span><span>'+mx+'%</span></div>'+
+        '<input type="range" data-s="'+it.k+'" min="0" max="'+mx+'" step="'+st+'"></div>'+
+        (m.levain?'<div class="nested"><div class="nested-top"><div class="l">Levain hydration</div>'+
+        '<div class="v" data-lhv="'+it.k+'"></div></div><div class="bar slim"><div class="track"></div>'+
+        '<div class="fill" data-lhfill="'+it.k+'"></div><div class="ends"><span>50%</span><span>160%</span></div>'+
+        '<input type="range" data-lhs="'+it.k+'" min="50" max="160" step="5"></div></div>':'');
+      L.appendChild(row);
+    });
+  });
+  L.querySelectorAll('[data-s]').forEach(sl=>sl.oninput=e=>{
+    const k=e.target.dataset.s, v=parseFloat(e.target.value);
+    if(meta(k).g==='flour') setFlour(k,v); else S.ing.find(i=>i.k===k).p=v;
+    syncRec(); update(); });
+  L.querySelectorAll('[data-lhs]').forEach(sl=>sl.oninput=e=>{
+    S.ing.find(i=>i.k===e.target.dataset.lhs).lh=parseInt(e.target.value); syncRec(); update(); });
+  L.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>{
+    S.ing=S.ing.filter(i=>i.k!==b.dataset.rm); syncRec(); buildLedger(); update(); });
+}
+function syncRec(){ if(S.rec) S.rec.ing=S.ing.map(i=>[i.k,i.p,i.lh]); }
+
+function update(){
+  const C=CATS[S.cat], F=flourWeight();
+  let liquid=0, fat=0, lf=0, lw=0;
+  S.ing.forEach(it=>{
+    const m=meta(it.k), g=F*it.p/100;
+    const pe=document.querySelector('[data-pct="'+it.k+'"]'); if(!pe) return;
+    pe.textContent=(stepFor(it.k)===0.1?it.p.toFixed(1):Math.round(it.p))+'%';
+    document.querySelector('[data-g="'+it.k+'"]').textContent=gDisp(g);
+    const sp=document.querySelector('[data-sp="'+it.k+'"]'); if(sp) sp.textContent=spoons(g,m.tsp);
+    const mx=m.g==='flour'?100:m.max;
+    document.querySelector('[data-fill="'+it.k+'"]').style.width=Math.max(0,Math.min(100,(it.p/mx)*100))+'%';
+    const sl=document.querySelector('[data-s="'+it.k+'"]'); if(sl) sl.value=it.p;
+    if(m.g==='liquid') liquid+=g;
+    if(m.g==='fat') fat+=g;
+    if(m.levain){ lf=g/(1+it.lh/100); lw=lf*it.lh/100;
+      const a=document.querySelector('[data-lhv="'+it.k+'"]'); if(a) a.textContent=it.lh+'%';
+      const b=document.querySelector('[data-lh="'+it.k+'"]'); if(b) b.textContent=it.lh+'% hydration starter';
+      const c=document.querySelector('[data-lhfill="'+it.k+'"]'); if(c) c.style.width=((it.lh-50)/110*100)+'%';
+      const d=document.querySelector('[data-lhs="'+it.k+'"]'); if(d) d.value=it.lh; }
+  });
+  const ft=$('fTotal'); if(ft) ft.textContent=fmt(r(F));
+  $('dTotal').textContent=fmt(r(S.dough))+' g';
+  if(!F){ $('c1l').textContent='Total flour'; $('c1v').textContent='—';
+          $('c2l').textContent='Ingredients'; $('c2v').textContent=S.ing.length; }
+  else if(CATS[S.cat].builder){
+    $('c1l').textContent='Total flour'; $('c1v').textContent=fmt(r(F))+' g';
+    $('c2l').textContent='Fat ratio'; $('c2v').textContent=r(fat/F*100,1).toFixed(1)+'%';
+  } else {
+    $('c1l').textContent='General hyd.'; $('c1v').textContent=(liquid/F*100).toFixed(1)+'%';
+    $('c2l').textContent='True hyd.'; $('c2v').textContent=(((liquid+lw)/(F+lf))*100).toFixed(1)+'%';
+  }
+  $('wFill').style.width=((S.dough-200)/5800*100)+'%';
+  if(document.activeElement!==$('wSlider')) $('wSlider').value=S.dough;
+  if(document.activeElement!==$('wInput')) $('wInput').value=r(S.dough);
+  if(document.activeElement!==$('items')) $('items').value=S.items;
+  $('each').textContent=fmt(r(S.dough/S.items))+' g each';
+}
+
+/* ============ CONTROLS ============ */
+$('wSlider').oninput=e=>{S.dough=+e.target.value;update();};
+$('wInput').oninput=e=>{const v=parseInt(e.target.value); if(!isNaN(v)&&v>0){S.dough=Math.min(Math.max(v,200),6000);update();}};
+$('items').oninput=e=>{const v=parseInt(e.target.value); if(!isNaN(v)&&v>0){S.items=Math.min(v,60);update();}};
+$('plus').onclick=()=>{S.items=Math.min(S.items+1,60);update();};
+$('minus').onclick=()=>{S.items=Math.max(S.items-1,1);update();};
+$('printBtn').onclick=()=>window.print();
+$('backBtn').onclick=()=>showCollection();
+$('newBtn').onclick=()=>newRecipe();
+
+$('catOpts').innerHTML=Object.entries(CATS).map(([k,c])=>
+  '<button class="opt" data-c="'+k+'"><span class="swatch" style="background:'+c.colour+'"></span>'+
+  c.label+'<span class="check">✓</span></button>').join('');
+function syncSel(){ document.querySelectorAll('[data-c]').forEach(b=>b.classList.toggle('sel',b.dataset.c===S.cat)); }
+document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{
+  S.cat=b.dataset.c; document.body.dataset.cat=S.cat;
+  $('catLabel').textContent=CATS[S.cat].label;
+  syncSel(); $('catMenu').classList.remove('open'); showCollection(); window.scrollTo(0,0); });
+$('catBtn').onclick=()=>{ syncSel(); $('catMenu').classList.add('open'); };
+$('catMenu').onclick=e=>{ if(e.target===$('catMenu')) $('catMenu').classList.remove('open'); };
+
+function renderLib(q){
+  q=(q||'').toLowerCase().trim();
+  const have=new Set(S.ing.map(i=>i.k)); let html='';
+  GROUPS.forEach(gr=>{
+    const items=LIB.filter(i=>i.g===gr&&(!q||i.n.toLowerCase().includes(q)));
+    if(!items.length) return;
+    html+='<div class="libgrp">'+GRP_LABEL[gr]+'</div>';
+    items.forEach(i=>{ const has=have.has(i.k);
+      html+='<button class="libitem" data-add="'+i.k+'"'+(has?' disabled':'')+'>'+i.n+
+        '<span class="plus">'+(has?'✓':'+')+'</span></button>'; });
+  });
+  $('libList').innerHTML=html||'<div class="libgrp">No match</div>';
+  $('libList').querySelectorAll('[data-add]').forEach(b=>{ if(b.disabled) return;
+    b.onclick=()=>{ const k=b.dataset.add, m=meta(k);
+      if(m.g==='flour'){ const share=flours().length?Math.round(100/(flours().length+1)):100;
+        S.ing.push({k,p:share,lh:100}); setFlour(k,share); }
+      else S.ing.push({k,p:m.d,lh:100});
+      $('libMenu').classList.remove('open'); $('libSearch').value='';
+      syncRec(); buildLedger(); update(); toast(m.n+' added'); }; });
+}
+$('addBtn').onclick=()=>{ renderLib(''); $('libMenu').classList.add('open'); };
+$('libSearch').oninput=e=>renderLib(e.target.value);
+$('libMenu').onclick=e=>{ if(e.target===$('libMenu')) $('libMenu').classList.remove('open'); };
+
+let tT; function toast(m){ const t=$('toast'); t.textContent=m; t.classList.add('show');
+  clearTimeout(tT); tT=setTimeout(()=>t.classList.remove('show'),2400); }
+
+let lock=null;
+function awakeUI(on){ $('awakeBtn').classList.toggle('on',on);
+  $('awakeLabel').textContent=on?'Screen on':'Keep screen on'; }
+async function acquire(){ try{ lock=await navigator.wakeLock.request('screen');
+  lock.addEventListener('release',()=>awakeUI(false)); awakeUI(true); toast('Screen will stay on'); }
+  catch(e){ awakeUI(false); toast('Screen lock unavailable here'); } }
+$('awakeBtn').onclick=async()=>{
+  if(!('wakeLock' in navigator)){ toast('Not supported in this browser'); return; }
+  if(lock){ await lock.release(); lock=null; awakeUI(false); toast('Screen lock off'); }
+  else await acquire(); };
+document.addEventListener('visibilitychange',async()=>{
+  if(lock&&document.visibilityState==='visible') await acquire(); });
+
+$('catLabel').textContent=CATS[S.cat].label;
+showCollection(); syncSel();
+</script>
 </body>
 </html>
