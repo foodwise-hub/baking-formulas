@@ -1,0 +1,62 @@
+{
+  "id": "sourdough-whole-wheat",
+  "name": "Whole Wheat Sourdough",
+  "category": "sourdough",
+  "tags": [
+    "100% whole grain",
+    "high hydration"
+  ],
+  "photo": "photos/sourdough-whole-wheat.jpg",
+  "summary": "Full whole grain. Dense, nutty, deeply sour.",
+  "yield": {
+    "count": 2,
+    "unit": "loaf",
+    "unitWeight": 900
+  },
+  "flours": [
+    {
+      "name": "Whole wheat flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 82,
+      "group": "liquid"
+    },
+    {
+      "name": "Levain / starter",
+      "percent": 20,
+      "group": "leaven",
+      "isLevain": true,
+      "levainHydration": 100
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2.2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Autolyse two hours, whole wheat drinks slowly."
+    },
+    {
+      "text": "Add levain and salt with wet hands."
+    },
+    {
+      "text": "Bulk with gentle coil folds only."
+    },
+    {
+      "text": "Shape tightly, retard overnight."
+    }
+  ],
+  "bake": {
+    "tempC": 235,
+    "time": 48,
+    "timeUnit": "minutes",
+    "notes": "Longer, lower bake. The bran burns easily above 240°C."
+  },
+  "notes": "Needs the full two-hour autolyse or it turns gummy."
+}

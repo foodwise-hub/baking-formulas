@@ -1,0 +1,62 @@
+{
+  "id": "pastry-empanada",
+  "name": "Empanada Dough",
+  "category": "pastry",
+  "tags": [
+    "savoury",
+    "filled"
+  ],
+  "photo": "photos/pastry-empanada.jpg",
+  "summary": "Sturdy, slightly tender, holds a wet filling without leaking.",
+  "yield": {
+    "count": 12,
+    "unit": "piece",
+    "unitWeight": 60
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Unsalted butter",
+      "percent": 30,
+      "group": "fat"
+    },
+    {
+      "name": "Water",
+      "percent": 35,
+      "group": "liquid"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 12,
+      "group": "egg"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Rub the butter in, then bind with egg and water."
+    },
+    {
+      "text": "Knead briefly to a smooth dough, rest one hour."
+    },
+    {
+      "text": "Roll thin, cut discs, fill and crimp firmly."
+    }
+  ],
+  "bake": {
+    "tempC": 200,
+    "time": 22,
+    "timeUnit": "minutes",
+    "notes": "Egg wash gives colour. Crimp tightly or they burst."
+  },
+  "notes": "Rest the dough or it shrinks back as you fill it."
+}

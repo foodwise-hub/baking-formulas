@@ -1,0 +1,65 @@
+{
+  "id": "yeasted-bagels",
+  "name": "Bagels",
+  "category": "yeasted",
+  "tags": [
+    "boiled",
+    "malt"
+  ],
+  "photo": "photos/yeasted-bagels.jpg",
+  "summary": "Stiff, low hydration, boiled before baking.",
+  "yield": {
+    "count": 8,
+    "unit": "loaf",
+    "unitWeight": 120
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 56,
+      "group": "liquid"
+    },
+    {
+      "name": "Malt syrup",
+      "percent": 3,
+      "group": "sugar"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 1,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix a very stiff dough. It will fight the mixer."
+    },
+    {
+      "text": "Bulk one hour, divide and shape rings."
+    },
+    {
+      "text": "Cold retard the shaped rings overnight."
+    },
+    {
+      "text": "Boil 45 seconds a side in malted water, then seed and bake."
+    }
+  ],
+  "bake": {
+    "tempC": 230,
+    "time": 20,
+    "timeUnit": "minutes",
+    "notes": "Boil longer for a chewier crust. Do not skip the malt."
+  },
+  "notes": "56% hydration feels wrong in the bowl and right in the mouth."
+}

@@ -1,0 +1,85 @@
+{
+  "id": "yeasted-cinnamon-rolls",
+  "name": "Cinnamon Rolls",
+  "category": "yeasted",
+  "tags": [
+    "sweet",
+    "filled"
+  ],
+  "photo": "photos/yeasted-cinnamon-rolls.jpg",
+  "summary": "Enriched dough, heavy cinnamon smear, baked tight together.",
+  "yield": {
+    "count": 9,
+    "unit": "loaf",
+    "unitWeight": 110
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Whole milk",
+      "percent": 50,
+      "group": "liquid"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 15,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 12,
+      "group": "sugar"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 15,
+      "group": "egg"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 1.8,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.8,
+      "group": "salt"
+    },
+    {
+      "name": "Brown sugar",
+      "percent": 25,
+      "group": "sugar"
+    },
+    {
+      "name": "Cinnamon",
+      "percent": 2,
+      "group": "flavour"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix and knead the enriched dough. Bulk until doubled."
+    },
+    {
+      "text": "Roll to a rectangle, spread butter, then brown sugar and cinnamon."
+    },
+    {
+      "text": "Roll up tight, cut with thread rather than a knife."
+    },
+    {
+      "text": "Proof in the pan until touching and puffy."
+    }
+  ],
+  "bake": {
+    "tempC": 180,
+    "time": 26,
+    "timeUnit": "minutes",
+    "notes": "Underbake slightly. They firm up as they cool."
+  },
+  "notes": "Thread instead of a knife keeps the spiral round."
+}

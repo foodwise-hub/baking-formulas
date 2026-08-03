@@ -1,0 +1,74 @@
+{
+  "id": "pizza-deep-dish",
+  "name": "Chicago Deep Dish",
+  "category": "pizza",
+  "tags": [
+    "pan",
+    "laminated"
+  ],
+  "photo": "photos/pizza-deep-dish.jpg",
+  "summary": "Laminated cornmeal crust, built upside down.",
+  "yield": {
+    "count": 2,
+    "unit": "ball",
+    "unitWeight": 550
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 90
+    },
+    {
+      "name": "Cornmeal",
+      "percent": 10
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 55,
+      "group": "liquid"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 12,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 2,
+      "group": "sugar"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 1,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix a stiff dough with the cornmeal. Bulk one hour."
+    },
+    {
+      "text": "Roll flat, spread with soft butter, roll up and coil. Chill."
+    },
+    {
+      "text": "Press the coiled dough up the sides of a deep pan."
+    },
+    {
+      "text": "Layer cheese first, then filling, then sauce on top."
+    }
+  ],
+  "bake": {
+    "tempC": 215,
+    "time": 35,
+    "timeUnit": "minutes",
+    "notes": "Long, moderate bake. The crust must cook through under all that weight."
+  },
+  "notes": "The butter lamination is what separates it from bread in a pan."
+}

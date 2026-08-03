@@ -1,0 +1,75 @@
+{
+  "id": "yeasted-brioche",
+  "name": "Brioche",
+  "category": "yeasted",
+  "tags": [
+    "very enriched",
+    "overnight chill"
+  ],
+  "photo": "photos/yeasted-brioche.jpg",
+  "summary": "Half butter by flour weight. Rich, yellow, barely bread.",
+  "yield": {
+    "count": 2,
+    "unit": "loaf",
+    "unitWeight": 500
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Whole egg",
+      "percent": 50,
+      "group": "egg"
+    },
+    {
+      "name": "Whole milk",
+      "percent": 20,
+      "group": "liquid"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 50,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 12,
+      "group": "sugar"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 2,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix flour, eggs, milk, sugar, yeast and salt to a strong dough."
+    },
+    {
+      "text": "Add cold butter slowly. This takes 15 minutes of mixing."
+    },
+    {
+      "text": "Chill the dough overnight. It is unworkable warm."
+    },
+    {
+      "text": "Shape cold, proof slowly until tripled."
+    }
+  ],
+  "bake": {
+    "tempC": 180,
+    "time": 30,
+    "timeUnit": "minutes",
+    "notes": "Bake in a tin. Free-standing brioche collapses under its own butter."
+  },
+  "notes": "Cold dough is the whole trick. Never shape it warm."
+}

@@ -1,0 +1,75 @@
+{
+  "id": "cakes-biscotti",
+  "name": "Biscotti",
+  "category": "cakes",
+  "tags": [
+    "twice baked",
+    "almond"
+  ],
+  "photo": "photos/cakes-biscotti.jpg",
+  "summary": "Twice baked, dry, built for dunking.",
+  "yield": {
+    "count": 24,
+    "unit": "piece",
+    "unitWeight": 35
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Granulated sugar",
+      "percent": 55,
+      "group": "sugar"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 45,
+      "group": "egg"
+    },
+    {
+      "name": "Sliced almonds",
+      "percent": 35,
+      "group": "inclusion"
+    },
+    {
+      "name": "Baking powder",
+      "percent": 3,
+      "group": "leaven"
+    },
+    {
+      "name": "Vanilla extract",
+      "percent": 3,
+      "group": "flavour"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Whisk eggs and sugar, then fold in flour, powder and nuts."
+    },
+    {
+      "text": "Shape two logs on a tray and bake until just firm."
+    },
+    {
+      "text": "Cool 15 minutes, slice on the diagonal."
+    },
+    {
+      "text": "Lay the slices flat and bake again to dry."
+    }
+  ],
+  "bake": {
+    "tempC": 165,
+    "time": 22,
+    "timeUnit": "minutes",
+    "notes": "Second bake at 150°C for 15 minutes a side."
+  },
+  "notes": "Slicing warm avoids shattering the logs."
+}

@@ -1,0 +1,68 @@
+{
+  "id": "sourdough-focaccia",
+  "name": "Sourdough Focaccia",
+  "category": "sourdough",
+  "tags": [
+    "no knead",
+    "high hydration",
+    "pan"
+  ],
+  "photo": "photos/sourdough-focaccia.jpg",
+  "summary": "Wet, dimpled, drowned in olive oil. Nearly no shaping.",
+  "yield": {
+    "count": 2,
+    "unit": "loaf",
+    "unitWeight": 700
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 85,
+      "group": "liquid"
+    },
+    {
+      "name": "Levain / starter",
+      "percent": 20,
+      "group": "leaven",
+      "isLevain": true,
+      "levainHydration": 100
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2.2,
+      "group": "salt"
+    },
+    {
+      "name": "Olive oil",
+      "percent": 8,
+      "group": "fat"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix everything in a bowl with wet hands."
+    },
+    {
+      "text": "Four sets of coil folds, 45 minutes apart."
+    },
+    {
+      "text": "Transfer to an oiled pan, rest until puffy."
+    },
+    {
+      "text": "Dimple hard with oiled fingers, salt, and bake."
+    }
+  ],
+  "bake": {
+    "tempC": 230,
+    "time": 25,
+    "timeUnit": "minutes",
+    "notes": "Be generous with the oil in the pan. It fries the base."
+  },
+  "notes": "More oil than feels sensible is the correct amount."
+}

@@ -1,0 +1,85 @@
+{
+  "id": "cakes-double-choc",
+  "name": "Double Chocolate",
+  "category": "cakes",
+  "tags": [
+    "cocoa",
+    "fudgy"
+  ],
+  "photo": "photos/cakes-double-choc.jpg",
+  "summary": "Cocoa in the dough, chunks through it. Fudgy centre.",
+  "yield": {
+    "count": 16,
+    "unit": "piece",
+    "unitWeight": 55
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Cocoa powder",
+      "percent": 30,
+      "group": "flavour"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 60,
+      "group": "fat"
+    },
+    {
+      "name": "Brown sugar",
+      "percent": 55,
+      "group": "sugar"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 25,
+      "group": "sugar"
+    },
+    {
+      "name": "Dark chocolate, chopped",
+      "percent": 70,
+      "group": "inclusion"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 35,
+      "group": "egg"
+    },
+    {
+      "name": "Baking soda",
+      "percent": 1.2,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.5,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Cream butter and sugars, beat in the egg."
+    },
+    {
+      "text": "Sift in flour, cocoa, soda and salt."
+    },
+    {
+      "text": "Fold in the chopped chocolate."
+    },
+    {
+      "text": "Chill one hour, then scoop and bake."
+    }
+  ],
+  "bake": {
+    "tempC": 180,
+    "time": 11,
+    "timeUnit": "minutes",
+    "notes": "Hard to judge by colour. Go by the set edge instead."
+  },
+  "notes": "Cocoa dries the dough, so do not overbake."
+}

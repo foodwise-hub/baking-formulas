@@ -1,0 +1,71 @@
+{
+  "id": "sourdough-danish-rye",
+  "name": "Danish Rye",
+  "category": "sourdough",
+  "tags": [
+    "rye heavy",
+    "tin loaf"
+  ],
+  "photo": "photos/sourdough-danish-rye.jpg",
+  "summary": "Dense, dark, sliced thin. Keeps for a week and improves.",
+  "yield": {
+    "count": 2,
+    "unit": "loaf",
+    "unitWeight": 900
+  },
+  "flours": [
+    {
+      "name": "Rye flour",
+      "percent": 60
+    },
+    {
+      "name": "Bread flour",
+      "percent": 40
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 85,
+      "group": "liquid"
+    },
+    {
+      "name": "Levain / starter",
+      "percent": 25,
+      "group": "leaven",
+      "isLevain": true,
+      "levainHydration": 100
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2.2,
+      "group": "salt"
+    },
+    {
+      "name": "Sunflower seeds",
+      "percent": 15,
+      "group": "inclusion"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix everything to a thick paste. Rye needs no kneading."
+    },
+    {
+      "text": "Scrape into an oiled tin and smooth the top wet."
+    },
+    {
+      "text": "Proof until small holes appear across the surface."
+    },
+    {
+      "text": "Bake long and low, then cool 24 hours before slicing."
+    }
+  ],
+  "bake": {
+    "tempC": 180,
+    "time": 75,
+    "timeUnit": "minutes",
+    "notes": "Do not slice for a full day. The crumb sets as it cools."
+  },
+  "notes": "Slicing early ruins it. Learned that the hard way."
+}

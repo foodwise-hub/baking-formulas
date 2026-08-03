@@ -1,0 +1,66 @@
+{
+  "id": "sourdough-spelt",
+  "name": "Spelt Sourdough",
+  "category": "sourdough",
+  "tags": [
+    "ancient grain",
+    "gentle handling"
+  ],
+  "photo": "photos/sourdough-spelt.jpg",
+  "summary": "Sweet and delicate. Handle gently, spelt gluten tears.",
+  "yield": {
+    "count": 2,
+    "unit": "loaf",
+    "unitWeight": 900
+  },
+  "flours": [
+    {
+      "name": "Spelt flour",
+      "percent": 60
+    },
+    {
+      "name": "Bread flour",
+      "percent": 40
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 74,
+      "group": "liquid"
+    },
+    {
+      "name": "Levain / starter",
+      "percent": 18,
+      "group": "leaven",
+      "isLevain": true,
+      "levainHydration": 100
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Short autolyse, 30 minutes only."
+    },
+    {
+      "text": "Mix in levain and salt without over-working."
+    },
+    {
+      "text": "Bulk with two gentle folds, no more."
+    },
+    {
+      "text": "Shape lightly and retard."
+    }
+  ],
+  "bake": {
+    "tempC": 240,
+    "time": 40,
+    "timeUnit": "minutes",
+    "notes": "Bakes faster than wheat. Check at 35 minutes."
+  },
+  "notes": "Over-fermenting turns spelt to soup. Watch it closely."
+}

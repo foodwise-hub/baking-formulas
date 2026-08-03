@@ -1,0 +1,60 @@
+{
+  "id": "pizza-neapolitan-yeast",
+  "name": "Neapolitan, 48h Yeast",
+  "category": "pizza",
+  "tags": [
+    "48h cold",
+    "low yeast"
+  ],
+  "photo": "photos/pizza-neapolitan-yeast.jpg",
+  "summary": "Same profile, commercial yeast, tiny dose, long cold rest.",
+  "yield": {
+    "count": 6,
+    "unit": "ball",
+    "unitWeight": 250
+  },
+  "flours": [
+    {
+      "name": "00 flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 65,
+      "group": "liquid"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 0.15,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2.8,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Dissolve salt in water, add flour, then the pinch of yeast."
+    },
+    {
+      "text": "Knead briefly, bulk two hours at room temperature."
+    },
+    {
+      "text": "Ball and cold ferment 48 hours."
+    },
+    {
+      "text": "Temper three hours before baking."
+    }
+  ],
+  "bake": {
+    "tempC": 480,
+    "time": 90,
+    "timeUnit": "seconds",
+    "notes": "Same bake as the levain version. Slightly less char tolerance."
+  },
+  "notes": "More predictable than levain when the kitchen is cold."
+}

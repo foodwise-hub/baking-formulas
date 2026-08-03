@@ -1,0 +1,79 @@
+{
+  "id": "pastry-morning-buns",
+  "name": "Morning Buns",
+  "category": "pastry",
+  "tags": [
+    "laminated",
+    "cinnamon"
+  ],
+  "photo": "photos/pastry-morning-buns.jpg",
+  "summary": "Laminated dough rolled with cinnamon sugar, baked in muffin tins.",
+  "yield": {
+    "count": 12,
+    "unit": "piece",
+    "unitWeight": 90
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 70
+    },
+    {
+      "name": "All-purpose flour",
+      "percent": 30
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Whole milk",
+      "percent": 50,
+      "group": "liquid"
+    },
+    {
+      "name": "Butter (lamination)",
+      "percent": 45,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 10,
+      "group": "sugar"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 1.8,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    },
+    {
+      "name": "Cinnamon",
+      "percent": 2,
+      "group": "flavour"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Laminate as croissant dough with three folds."
+    },
+    {
+      "text": "Sheet, spread cinnamon sugar, roll into a log."
+    },
+    {
+      "text": "Cut and place cut side up in buttered muffin tins."
+    },
+    {
+      "text": "Proof until puffy and bake."
+    }
+  ],
+  "bake": {
+    "tempC": 190,
+    "time": 22,
+    "timeUnit": "minutes",
+    "notes": "Sugar in the tin caramelises into the crust. Butter them well."
+  },
+  "notes": "Turn them out immediately or the caramel welds them in."
+}

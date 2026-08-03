@@ -1,0 +1,65 @@
+{
+  "id": "cakes-shortbread",
+  "name": "Shortbread",
+  "category": "cakes",
+  "tags": [
+    "three ingredient",
+    "sandy"
+  ],
+  "photo": "photos/cakes-shortbread.jpg",
+  "summary": "Three ingredients plus salt. Sandy, buttery, restrained.",
+  "yield": {
+    "count": 20,
+    "unit": "piece",
+    "unitWeight": 35
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Unsalted butter",
+      "percent": 65,
+      "group": "fat"
+    },
+    {
+      "name": "Powdered sugar",
+      "percent": 33,
+      "group": "sugar"
+    },
+    {
+      "name": "Vanilla extract",
+      "percent": 2,
+      "group": "flavour"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.5,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Cream butter and sugar only briefly. Too much air ruins the texture."
+    },
+    {
+      "text": "Add flour and salt, bring together, press into a tin."
+    },
+    {
+      "text": "Dock all over and chill until firm."
+    },
+    {
+      "text": "Bake pale, cut while warm."
+    }
+  ],
+  "bake": {
+    "tempC": 160,
+    "time": 35,
+    "timeUnit": "minutes",
+    "notes": "Low and slow. Any colour beyond pale gold is too far."
+  },
+  "notes": "Cut it warm or it shatters."
+}

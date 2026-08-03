@@ -1,0 +1,68 @@
+{
+  "id": "sourdough-olive-rosemary",
+  "name": "Olive & Rosemary",
+  "category": "sourdough",
+  "tags": [
+    "savoury",
+    "inclusions"
+  ],
+  "photo": "photos/sourdough-olive-rosemary.jpg",
+  "summary": "Salty, herbal, torn apart warm with olive oil.",
+  "yield": {
+    "count": 2,
+    "unit": "loaf",
+    "unitWeight": 900
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 90
+    },
+    {
+      "name": "Whole wheat flour",
+      "percent": 10
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 75,
+      "group": "liquid"
+    },
+    {
+      "name": "Levain / starter",
+      "percent": 18,
+      "group": "leaven",
+      "isLevain": true,
+      "levainHydration": 100
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    },
+    {
+      "name": "Olive oil",
+      "percent": 3,
+      "group": "fat"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Autolyse, then add levain, salt and oil."
+    },
+    {
+      "text": "Laminate the olives and rosemary in on the second fold."
+    },
+    {
+      "text": "Bulk out, shape, retard overnight."
+    }
+  ],
+  "bake": {
+    "tempC": 240,
+    "time": 42,
+    "timeUnit": "minutes",
+    "notes": "Olives leach moisture. Pat them dry before folding in."
+  },
+  "notes": "Halved olives distribute better than whole."
+}

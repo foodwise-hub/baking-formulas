@@ -1,0 +1,75 @@
+{
+  "id": "cakes-sugar-cookies",
+  "name": "Sugar Cookies",
+  "category": "cakes",
+  "tags": [
+    "rolled",
+    "cut out"
+  ],
+  "photo": "photos/cakes-sugar-cookies.jpg",
+  "summary": "Rolled and cut. Holds a sharp edge for decorating.",
+  "yield": {
+    "count": 20,
+    "unit": "piece",
+    "unitWeight": 40
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Unsalted butter",
+      "percent": 55,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 60,
+      "group": "sugar"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 20,
+      "group": "egg"
+    },
+    {
+      "name": "Vanilla extract",
+      "percent": 3,
+      "group": "flavour"
+    },
+    {
+      "name": "Baking powder",
+      "percent": 2,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Cream butter and sugar, add egg and vanilla."
+    },
+    {
+      "text": "Add dry ingredients and stop as soon as it comes together."
+    },
+    {
+      "text": "Roll between parchment and chill flat."
+    },
+    {
+      "text": "Cut shapes and freeze ten minutes before baking."
+    }
+  ],
+  "bake": {
+    "tempC": 175,
+    "time": 11,
+    "timeUnit": "minutes",
+    "notes": "Freezing cut shapes is what keeps the edges sharp."
+  },
+  "notes": "No leavening beyond a little powder or the detail blurs."
+}

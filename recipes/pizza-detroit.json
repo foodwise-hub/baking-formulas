@@ -1,0 +1,65 @@
+{
+  "id": "pizza-detroit",
+  "name": "Detroit Style",
+  "category": "pizza",
+  "tags": [
+    "pan",
+    "high hydration"
+  ],
+  "photo": "photos/pizza-detroit.jpg",
+  "summary": "Thick, airy, cheese caramelised against the pan wall.",
+  "yield": {
+    "count": 2,
+    "unit": "ball",
+    "unitWeight": 450
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 70,
+      "group": "liquid"
+    },
+    {
+      "name": "Olive oil",
+      "percent": 4,
+      "group": "fat"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 0.8,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix to a slack dough. No kneading needed."
+    },
+    {
+      "text": "Bulk with two folds, then press into a heavily oiled steel pan."
+    },
+    {
+      "text": "Rest until it fills the pan and jiggles."
+    },
+    {
+      "text": "Edge with cheese all the way to the walls before topping."
+    }
+  ],
+  "bake": {
+    "tempC": 260,
+    "time": 14,
+    "timeUnit": "minutes",
+    "notes": "The pan must be well oiled. That fried base is the entire point."
+  },
+  "notes": "Blue steel pans beat non-stick by a wide margin."
+}

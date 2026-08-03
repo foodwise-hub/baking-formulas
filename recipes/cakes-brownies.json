@@ -1,0 +1,80 @@
+{
+  "id": "cakes-brownies",
+  "name": "Brownies",
+  "category": "cakes",
+  "tags": [
+    "fudgy",
+    "tray bake"
+  ],
+  "photo": "photos/cakes-brownies.jpg",
+  "summary": "Melted chocolate base. Dense, glossy crust, fudgy centre.",
+  "yield": {
+    "count": 16,
+    "unit": "piece",
+    "unitWeight": 60
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Dark chocolate, chopped",
+      "percent": 200,
+      "group": "inclusion"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 150,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 200,
+      "group": "sugar"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 150,
+      "group": "egg"
+    },
+    {
+      "name": "Cocoa powder",
+      "percent": 30,
+      "group": "flavour"
+    },
+    {
+      "name": "Vanilla extract",
+      "percent": 5,
+      "group": "flavour"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 3,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Melt the chocolate and butter together and cool slightly."
+    },
+    {
+      "text": "Whisk sugar and eggs hard for four minutes until thick and pale."
+    },
+    {
+      "text": "Fold the chocolate in, then flour, cocoa and salt."
+    },
+    {
+      "text": "Bake until the centre is barely set, then cool completely."
+    }
+  ],
+  "bake": {
+    "tempC": 175,
+    "time": 28,
+    "timeUnit": "minutes",
+    "notes": "The whisked egg and sugar is what gives the papery crust."
+  },
+  "notes": "Cool fully before cutting or they smear."
+}

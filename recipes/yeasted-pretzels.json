@@ -1,0 +1,70 @@
+{
+  "id": "yeasted-pretzels",
+  "name": "Soft Pretzels",
+  "category": "yeasted",
+  "tags": [
+    "lye bath",
+    "shaped"
+  ],
+  "photo": "photos/yeasted-pretzels.jpg",
+  "summary": "Alkaline bath, deep mahogany crust, coarse salt.",
+  "yield": {
+    "count": 8,
+    "unit": "loaf",
+    "unitWeight": 100
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 55,
+      "group": "liquid"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 4,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 2,
+      "group": "sugar"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 1.2,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix a stiff dough and knead until smooth."
+    },
+    {
+      "text": "Bulk one hour, then roll long ropes and twist."
+    },
+    {
+      "text": "Chill the shaped pretzels 30 minutes to firm up."
+    },
+    {
+      "text": "Dip in the alkaline bath, salt, slash, and bake immediately."
+    }
+  ],
+  "bake": {
+    "tempC": 215,
+    "time": 15,
+    "timeUnit": "minutes",
+    "notes": "Baked soda works safely at home. Real lye needs gloves and care."
+  },
+  "notes": "Chilling before the bath keeps the shape crisp."
+}

@@ -1,0 +1,80 @@
+{
+  "id": "cakes-butter-cake",
+  "name": "Vanilla Butter Cake",
+  "category": "cakes",
+  "tags": [
+    "layer cake",
+    "creaming"
+  ],
+  "photo": "photos/cakes-butter-cake.jpg",
+  "summary": "Fine even crumb. The base for layer cakes.",
+  "yield": {
+    "count": 2,
+    "unit": "piece",
+    "unitWeight": 450
+  },
+  "flours": [
+    {
+      "name": "Cake flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Unsalted butter",
+      "percent": 55,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 90,
+      "group": "sugar"
+    },
+    {
+      "name": "Whole milk",
+      "percent": 60,
+      "group": "liquid"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 55,
+      "group": "egg"
+    },
+    {
+      "name": "Baking powder",
+      "percent": 4,
+      "group": "leaven"
+    },
+    {
+      "name": "Vanilla extract",
+      "percent": 4,
+      "group": "flavour"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.5,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Cream butter and sugar for a full five minutes until very pale."
+    },
+    {
+      "text": "Add eggs one at a time, scraping between each."
+    },
+    {
+      "text": "Alternate flour and milk in three additions, ending with flour."
+    },
+    {
+      "text": "Divide between tins and bake until it springs back."
+    }
+  ],
+  "bake": {
+    "tempC": 175,
+    "time": 28,
+    "timeUnit": "minutes",
+    "notes": "Overmixing after the flour goes in makes it tough. Fold gently."
+  },
+  "notes": "Five minutes of creaming really does matter here."
+}

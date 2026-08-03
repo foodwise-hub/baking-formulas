@@ -1,0 +1,76 @@
+{
+  "id": "sourdough-cranberry-walnut",
+  "name": "Cranberry Walnut",
+  "category": "sourdough",
+  "tags": [
+    "inclusions",
+    "festive"
+  ],
+  "photo": "photos/sourdough-cranberry-walnut.jpg",
+  "summary": "Sweet and bitter against a sour crumb. Holiday loaf.",
+  "yield": {
+    "count": 2,
+    "unit": "loaf",
+    "unitWeight": 900
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 80
+    },
+    {
+      "name": "Whole wheat flour",
+      "percent": 20
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 78,
+      "group": "liquid"
+    },
+    {
+      "name": "Levain / starter",
+      "percent": 18,
+      "group": "leaven",
+      "isLevain": true,
+      "levainHydration": 100
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    },
+    {
+      "name": "Dried cranberries",
+      "percent": 20,
+      "group": "inclusion"
+    },
+    {
+      "name": "Walnuts",
+      "percent": 15,
+      "group": "inclusion"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Soak the cranberries in warm water, then drain well."
+    },
+    {
+      "text": "Autolyse, add levain and salt."
+    },
+    {
+      "text": "Laminate the fruit and nuts in during bulk."
+    },
+    {
+      "text": "Shape, retard overnight, bake from cold."
+    }
+  ],
+  "bake": {
+    "tempC": 240,
+    "time": 45,
+    "timeUnit": "minutes",
+    "notes": "Walnuts darken the crumb purple. Entirely normal."
+  },
+  "notes": "Toast the walnuts first, it doubles the flavour."
+}

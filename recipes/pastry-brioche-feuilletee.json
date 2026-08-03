@@ -1,0 +1,75 @@
+{
+  "id": "pastry-brioche-feuilletee",
+  "name": "Brioche Feuilletée",
+  "category": "pastry",
+  "tags": [
+    "laminated",
+    "enriched"
+  ],
+  "photo": "photos/pastry-brioche-feuilletee.jpg",
+  "summary": "Brioche dough laminated with butter. Rich twice over.",
+  "yield": {
+    "count": 10,
+    "unit": "piece",
+    "unitWeight": 90
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Whole egg",
+      "percent": 40,
+      "group": "egg"
+    },
+    {
+      "name": "Whole milk",
+      "percent": 15,
+      "group": "liquid"
+    },
+    {
+      "name": "Butter (lamination)",
+      "percent": 50,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 12,
+      "group": "sugar"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 2,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Make a firm brioche dough and chill overnight."
+    },
+    {
+      "text": "Laminate with three single folds, keeping everything cold."
+    },
+    {
+      "text": "Shape into twists or tin loaves."
+    },
+    {
+      "text": "Proof slowly and bake covered if it colours early."
+    }
+  ],
+  "bake": {
+    "tempC": 180,
+    "time": 30,
+    "timeUnit": "minutes",
+    "notes": "Very rich, so it burns before it cooks. Tent early."
+  },
+  "notes": "Colder than croissant dough throughout or the butter leaks."
+}

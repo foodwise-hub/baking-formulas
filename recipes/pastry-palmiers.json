@@ -1,0 +1,65 @@
+{
+  "id": "pastry-palmiers",
+  "name": "Palmiers",
+  "category": "pastry",
+  "tags": [
+    "puff",
+    "two ingredient"
+  ],
+  "photo": "photos/pastry-palmiers.jpg",
+  "summary": "Puff pastry rolled in sugar, folded, sliced, caramelised flat.",
+  "yield": {
+    "count": 20,
+    "unit": "piece",
+    "unitWeight": 35
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Butter (lamination)",
+      "percent": 80,
+      "group": "fat"
+    },
+    {
+      "name": "Water",
+      "percent": 48,
+      "group": "liquid"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 40,
+      "group": "sugar"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.5,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Laminate a rough puff, using sugar instead of flour to roll."
+    },
+    {
+      "text": "Fold both sides to the centre twice and chill firm."
+    },
+    {
+      "text": "Slice 1 cm thick and lay flat with space to spread."
+    },
+    {
+      "text": "Flip halfway through the bake to caramelise both sides."
+    }
+  ],
+  "bake": {
+    "tempC": 200,
+    "time": 20,
+    "timeUnit": "minutes",
+    "notes": "They will spread to twice the width. Space generously."
+  },
+  "notes": "Flipping is essential for even caramelisation."
+}

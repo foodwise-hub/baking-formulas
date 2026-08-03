@@ -1,0 +1,67 @@
+{
+  "id": "pastry-cinnamon-twists",
+  "name": "Cinnamon Twists",
+  "category": "pastry",
+  "tags": [
+    "puff",
+    "quick"
+  ],
+  "photo": "photos/pastry-cinnamon-twists.jpg",
+  "summary": "Puff pastry, cinnamon sugar, twisted and baked crisp.",
+  "yield": {
+    "count": 16,
+    "unit": "piece",
+    "unitWeight": 40
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Butter (lamination)",
+      "percent": 70,
+      "group": "fat"
+    },
+    {
+      "name": "Water",
+      "percent": 48,
+      "group": "liquid"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 30,
+      "group": "sugar"
+    },
+    {
+      "name": "Cinnamon",
+      "percent": 3,
+      "group": "flavour"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.5,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Laminate a rough puff with four book folds."
+    },
+    {
+      "text": "Roll out, cover half with cinnamon sugar, fold over and press."
+    },
+    {
+      "text": "Cut strips, twist each twice, and chill."
+    }
+  ],
+  "bake": {
+    "tempC": 200,
+    "time": 18,
+    "timeUnit": "minutes",
+    "notes": "Press the twists onto the tray so they hold their shape."
+  },
+  "notes": "Twist tighter than feels right, they relax in the oven."
+}

@@ -1,0 +1,80 @@
+{
+  "id": "sourdough-seeded",
+  "name": "Seeded Multigrain",
+  "category": "sourdough",
+  "tags": [
+    "seeded",
+    "soaker"
+  ],
+  "photo": "photos/sourdough-seeded.jpg",
+  "summary": "Toasted seed soaker folded through a three-flour base.",
+  "yield": {
+    "count": 2,
+    "unit": "loaf",
+    "unitWeight": 900
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 70
+    },
+    {
+      "name": "Whole wheat flour",
+      "percent": 20
+    },
+    {
+      "name": "Rye flour",
+      "percent": 10
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 80,
+      "group": "liquid"
+    },
+    {
+      "name": "Levain / starter",
+      "percent": 20,
+      "group": "leaven",
+      "isLevain": true,
+      "levainHydration": 100
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    },
+    {
+      "name": "Sunflower seeds",
+      "percent": 10,
+      "group": "inclusion"
+    },
+    {
+      "name": "Sesame seeds",
+      "percent": 5,
+      "group": "inclusion"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Toast the seeds and cover with hot water. Cool completely."
+    },
+    {
+      "text": "Autolyse the flours and water one hour."
+    },
+    {
+      "text": "Add levain, salt and the drained soaker."
+    },
+    {
+      "text": "Bulk, shape, roll the wet loaf in extra seeds, retard."
+    }
+  ],
+  "bake": {
+    "tempC": 240,
+    "time": 45,
+    "timeUnit": "minutes",
+    "notes": "Seeds on the crust scorch fast. Cover the full first half."
+  },
+  "notes": "Drain the soaker properly or hydration runs away."
+}

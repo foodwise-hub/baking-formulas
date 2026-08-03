@@ -1,0 +1,60 @@
+{
+  "id": "pastry-pate-brisee",
+  "name": "Pâte Brisée",
+  "category": "pastry",
+  "tags": [
+    "short crust",
+    "savoury"
+  ],
+  "photo": "photos/pastry-pate-brisee.jpg",
+  "summary": "Savoury short crust. Tender, no sugar, quiche and tart shells.",
+  "yield": {
+    "count": 2,
+    "unit": "piece",
+    "unitWeight": 300
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Unsalted butter",
+      "percent": 65,
+      "group": "fat"
+    },
+    {
+      "name": "Water",
+      "percent": 22,
+      "group": "liquid"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Cut cold butter into the flour until sandy with pea-sized pieces."
+    },
+    {
+      "text": "Add ice water and bring together with as few strokes as possible."
+    },
+    {
+      "text": "Chill at least one hour before rolling."
+    },
+    {
+      "text": "Blind bake with weights before filling."
+    }
+  ],
+  "bake": {
+    "tempC": 190,
+    "time": 20,
+    "timeUnit": "minutes",
+    "notes": "Freeze the shell for 15 minutes before blind baking to stop shrinkage."
+  },
+  "notes": "Overworking is the only way to ruin this."
+}

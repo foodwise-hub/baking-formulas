@@ -1,0 +1,80 @@
+{
+  "id": "cakes-lemon-drizzle",
+  "name": "Lemon Drizzle",
+  "category": "cakes",
+  "tags": [
+    "citrus",
+    "syrup soaked"
+  ],
+  "photo": "photos/cakes-lemon-drizzle.jpg",
+  "summary": "Zest through the crumb, syrup poured over hot.",
+  "yield": {
+    "count": 1,
+    "unit": "piece",
+    "unitWeight": 900
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Granulated sugar",
+      "percent": 90,
+      "group": "sugar"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 70,
+      "group": "fat"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 65,
+      "group": "egg"
+    },
+    {
+      "name": "Whole milk",
+      "percent": 20,
+      "group": "liquid"
+    },
+    {
+      "name": "Citrus zest",
+      "percent": 6,
+      "group": "flavour"
+    },
+    {
+      "name": "Baking powder",
+      "percent": 3,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Rub the zest into the sugar first to release the oils."
+    },
+    {
+      "text": "Cream with butter, then add eggs gradually."
+    },
+    {
+      "text": "Fold in flour and milk, bake in a lined loaf tin."
+    },
+    {
+      "text": "Pierce all over and pour lemon syrup over while hot."
+    }
+  ],
+  "bake": {
+    "tempC": 170,
+    "time": 45,
+    "timeUnit": "minutes",
+    "notes": "The cake must be hot and the syrup cold for it to soak in."
+  },
+  "notes": "Rubbing zest into sugar doubles the citrus flavour."
+}

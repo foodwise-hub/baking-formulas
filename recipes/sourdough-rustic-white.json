@@ -1,0 +1,62 @@
+{
+  "id": "sourdough-rustic-white",
+  "name": "Rustic White",
+  "category": "sourdough",
+  "tags": [
+    "beginner",
+    "one flour"
+  ],
+  "photo": "photos/sourdough-rustic-white.jpg",
+  "summary": "Single flour, long bulk. The loaf that teaches you fermentation.",
+  "yield": {
+    "count": 2,
+    "unit": "loaf",
+    "unitWeight": 900
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 72,
+      "group": "liquid"
+    },
+    {
+      "name": "Levain / starter",
+      "percent": 20,
+      "group": "leaven",
+      "isLevain": true,
+      "levainHydration": 100
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Autolyse flour and water for one hour."
+    },
+    {
+      "text": "Add levain and salt, mix to full incorporation."
+    },
+    {
+      "text": "Bulk with four sets of folds."
+    },
+    {
+      "text": "Shape, basket, retard overnight."
+    }
+  ],
+  "bake": {
+    "tempC": 240,
+    "time": 42,
+    "timeUnit": "minutes",
+    "notes": "Score deeply, one clean slash. Steam 20 minutes."
+  },
+  "notes": "Best crumb structure of any loaf here."
+}

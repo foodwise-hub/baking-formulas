@@ -1,0 +1,67 @@
+{
+  "id": "pizza-sourdough-pan",
+  "name": "Sourdough Pan Pizza",
+  "category": "pizza",
+  "tags": [
+    "levain",
+    "pan"
+  ],
+  "photo": "photos/pizza-sourdough-pan.jpg",
+  "summary": "Levain-leavened, thick, tangy, fried in the pan.",
+  "yield": {
+    "count": 2,
+    "unit": "ball",
+    "unitWeight": 420
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 75,
+      "group": "liquid"
+    },
+    {
+      "name": "Levain / starter",
+      "percent": 20,
+      "group": "leaven",
+      "isLevain": true,
+      "levainHydration": 100
+    },
+    {
+      "name": "Olive oil",
+      "percent": 4,
+      "group": "fat"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix and fold four times over three hours."
+    },
+    {
+      "text": "Cold ferment overnight in the fridge."
+    },
+    {
+      "text": "Press into an oiled pan and rest until puffy."
+    },
+    {
+      "text": "Top and bake as hot as the oven allows."
+    }
+  ],
+  "bake": {
+    "tempC": 260,
+    "time": 16,
+    "timeUnit": "minutes",
+    "notes": "The overnight retard is where the sourness develops."
+  },
+  "notes": "Best crust of any pizza here, but it needs planning."
+}

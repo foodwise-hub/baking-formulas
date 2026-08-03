@@ -1,0 +1,69 @@
+{
+  "id": "sourdough-country",
+  "name": "Country Sourdough",
+  "category": "sourdough",
+  "tags": [
+    "high hydration",
+    "overnight"
+  ],
+  "photo": "photos/sourdough-country.jpg",
+  "summary": "Open crumb, deep blistered crust. Overnight cold retard.",
+  "yield": {
+    "count": 2,
+    "unit": "loaf",
+    "unitWeight": 900
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 80
+    },
+    {
+      "name": "Whole wheat flour",
+      "percent": 20
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 76,
+      "group": "liquid"
+    },
+    {
+      "name": "Levain / starter",
+      "percent": 15,
+      "group": "leaven",
+      "isLevain": true,
+      "levainHydration": 100
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix flours with all but 50 g of the water. Rest 45 minutes."
+    },
+    {
+      "text": "Add levain and salt, then work in the reserved water."
+    },
+    {
+      "text": "Bulk ferment, folding every 45 minutes."
+    },
+    {
+      "text": "Pre-shape, rest, shape and basket."
+    },
+    {
+      "text": "Cold retard overnight."
+    }
+  ],
+  "bake": {
+    "tempC": 245,
+    "time": 45,
+    "timeUnit": "minutes",
+    "notes": "Covered 20 min, uncovered 25 min. Steam the first half."
+  },
+  "notes": "Crust was best yet. Could push water to 78%."
+}

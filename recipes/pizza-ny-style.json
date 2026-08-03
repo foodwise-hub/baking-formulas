@@ -1,0 +1,70 @@
+{
+  "id": "pizza-ny-style",
+  "name": "New York Style",
+  "category": "pizza",
+  "tags": [
+    "48h cold",
+    "foldable"
+  ],
+  "photo": "photos/pizza-ny-style.jpg",
+  "summary": "Foldable, chewy, a little oil and sugar in the dough.",
+  "yield": {
+    "count": 5,
+    "unit": "ball",
+    "unitWeight": 280
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 63,
+      "group": "liquid"
+    },
+    {
+      "name": "Olive oil",
+      "percent": 3,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 2,
+      "group": "sugar"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 0.4,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix everything and knead to a smooth, elastic dough."
+    },
+    {
+      "text": "Ball immediately and cold ferment 48 hours."
+    },
+    {
+      "text": "Temper two hours before stretching."
+    },
+    {
+      "text": "Stretch wide and thin, leaving a modest rim."
+    }
+  ],
+  "bake": {
+    "tempC": 290,
+    "time": 8,
+    "timeUnit": "minutes",
+    "notes": "Bake on a steel as hot as the oven will go."
+  },
+  "notes": "The oil is what makes the slice fold without cracking."
+}

@@ -1,0 +1,75 @@
+{
+  "id": "cakes-madeleines",
+  "name": "Madeleines",
+  "category": "cakes",
+  "tags": [
+    "shell tin",
+    "chilled batter"
+  ],
+  "photo": "photos/cakes-madeleines.jpg",
+  "summary": "Hump-backed, buttery, best eaten within the hour.",
+  "yield": {
+    "count": 20,
+    "unit": "piece",
+    "unitWeight": 25
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Whole egg",
+      "percent": 100,
+      "group": "egg"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 90,
+      "group": "sugar"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 90,
+      "group": "fat"
+    },
+    {
+      "name": "Citrus zest",
+      "percent": 4,
+      "group": "flavour"
+    },
+    {
+      "name": "Baking powder",
+      "percent": 3,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Whisk eggs and sugar to a thick ribbon."
+    },
+    {
+      "text": "Fold in flour, powder and zest, then the warm melted butter."
+    },
+    {
+      "text": "Chill the batter at least four hours, ideally overnight."
+    },
+    {
+      "text": "Pipe into a cold buttered tin and bake immediately."
+    }
+  ],
+  "bake": {
+    "tempC": 200,
+    "time": 9,
+    "timeUnit": "minutes",
+    "notes": "Cold batter into a hot oven is what creates the hump."
+  },
+  "notes": "Butter and flour the tin properly or they weld in."
+}

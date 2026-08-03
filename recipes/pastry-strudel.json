@@ -1,0 +1,60 @@
+{
+  "id": "pastry-strudel",
+  "name": "Strudel Dough",
+  "category": "pastry",
+  "tags": [
+    "stretched",
+    "thin"
+  ],
+  "photo": "photos/pastry-strudel.jpg",
+  "summary": "Stretched translucent by hand. Almost no fat in the dough.",
+  "yield": {
+    "count": 2,
+    "unit": "piece",
+    "unitWeight": 400
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 45,
+      "group": "liquid"
+    },
+    {
+      "name": "Neutral oil",
+      "percent": 12,
+      "group": "fat"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.5,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Knead hard for ten minutes until glossy and very elastic."
+    },
+    {
+      "text": "Rest under oil for one hour minimum."
+    },
+    {
+      "text": "Stretch over a floured cloth until you can read through it."
+    },
+    {
+      "text": "Brush with butter, fill, and roll using the cloth."
+    }
+  ],
+  "bake": {
+    "tempC": 190,
+    "time": 40,
+    "timeUnit": "minutes",
+    "notes": "Brush with butter between every roll for separate layers."
+  },
+  "notes": "The long rest is what lets it stretch without tearing."
+}

@@ -1,0 +1,95 @@
+{
+  "id": "cakes-oatmeal-raisin",
+  "name": "Oatmeal Raisin",
+  "category": "cakes",
+  "tags": [
+    "oats",
+    "spiced"
+  ],
+  "photo": "photos/cakes-oatmeal-raisin.jpg",
+  "summary": "Chewy, spiced, heavy on oats.",
+  "yield": {
+    "count": 18,
+    "unit": "piece",
+    "unitWeight": 55
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Rolled oats",
+      "percent": 80,
+      "group": "inclusion"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 65,
+      "group": "fat"
+    },
+    {
+      "name": "Brown sugar",
+      "percent": 60,
+      "group": "sugar"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 25,
+      "group": "sugar"
+    },
+    {
+      "name": "Raisins",
+      "percent": 60,
+      "group": "inclusion"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 30,
+      "group": "egg"
+    },
+    {
+      "name": "Vanilla extract",
+      "percent": 3,
+      "group": "flavour"
+    },
+    {
+      "name": "Cinnamon",
+      "percent": 2,
+      "group": "flavour"
+    },
+    {
+      "name": "Baking soda",
+      "percent": 1.2,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.5,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Soak the raisins in hot water ten minutes, then drain."
+    },
+    {
+      "text": "Cream butter and sugars, add egg and vanilla."
+    },
+    {
+      "text": "Fold in the dry ingredients, then oats and raisins."
+    },
+    {
+      "text": "Rest 30 minutes so the oats hydrate."
+    }
+  ],
+  "bake": {
+    "tempC": 180,
+    "time": 13,
+    "timeUnit": "minutes",
+    "notes": "Soaked raisins stay plump instead of burning."
+  },
+  "notes": "The oat rest changes the texture completely."
+}

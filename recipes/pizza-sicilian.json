@@ -1,0 +1,62 @@
+{
+  "id": "pizza-sicilian",
+  "name": "Sicilian Grandma",
+  "category": "pizza",
+  "tags": [
+    "pan",
+    "same day"
+  ],
+  "photo": "photos/pizza-sicilian.jpg",
+  "summary": "Rectangular, thick-ish, crisp fried underside.",
+  "yield": {
+    "count": 2,
+    "unit": "ball",
+    "unitWeight": 450
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 68,
+      "group": "liquid"
+    },
+    {
+      "name": "Olive oil",
+      "percent": 5,
+      "group": "fat"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 0.8,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix and knead briefly. Bulk 90 minutes."
+    },
+    {
+      "text": "Press into an oiled sheet pan, rest 30 minutes, press again to the corners."
+    },
+    {
+      "text": "Top with crushed tomato and hard cheese."
+    }
+  ],
+  "bake": {
+    "tempC": 250,
+    "time": 18,
+    "timeUnit": "minutes",
+    "notes": "Two pressings. The dough will not reach the corners in one."
+  },
+  "notes": "Sauce goes on top of the cheese, not under it."
+}

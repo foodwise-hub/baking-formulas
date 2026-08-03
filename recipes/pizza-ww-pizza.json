@@ -1,0 +1,66 @@
+{
+  "id": "pizza-ww-pizza",
+  "name": "Whole Wheat Pizza",
+  "category": "pizza",
+  "tags": [
+    "whole grain",
+    "sturdy"
+  ],
+  "photo": "photos/pizza-ww-pizza.jpg",
+  "summary": "Nutty and sturdy. Holds heavy toppings without sagging.",
+  "yield": {
+    "count": 5,
+    "unit": "ball",
+    "unitWeight": 260
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 70
+    },
+    {
+      "name": "Whole wheat flour",
+      "percent": 30
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 68,
+      "group": "liquid"
+    },
+    {
+      "name": "Olive oil",
+      "percent": 3,
+      "group": "fat"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 0.5,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Autolyse the flours and water 45 minutes."
+    },
+    {
+      "text": "Add yeast, salt and oil, knead to smooth."
+    },
+    {
+      "text": "Bulk two hours, ball, cold ferment 24 hours."
+    }
+  ],
+  "bake": {
+    "tempC": 280,
+    "time": 8,
+    "timeUnit": "minutes",
+    "notes": "Whole wheat browns faster. Watch the rim closely."
+  },
+  "notes": "30% is the ceiling before it turns heavy."
+}

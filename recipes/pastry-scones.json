@@ -1,0 +1,70 @@
+{
+  "id": "pastry-scones",
+  "name": "Cream Scones",
+  "category": "pastry",
+  "tags": [
+    "quick",
+    "cream"
+  ],
+  "photo": "photos/pastry-scones.jpg",
+  "summary": "Cold butter, minimal handling, tall and flaky.",
+  "yield": {
+    "count": 8,
+    "unit": "piece",
+    "unitWeight": 85
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Unsalted butter",
+      "percent": 30,
+      "group": "fat"
+    },
+    {
+      "name": "Heavy cream",
+      "percent": 55,
+      "group": "liquid"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 12,
+      "group": "sugar"
+    },
+    {
+      "name": "Baking powder",
+      "percent": 5,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.5,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Rub cold butter into the dry ingredients to coarse crumbs."
+    },
+    {
+      "text": "Add cream and bring together barely."
+    },
+    {
+      "text": "Pat to 3 cm, cut straight down without twisting."
+    },
+    {
+      "text": "Chill 20 minutes, then bake hot."
+    }
+  ],
+  "bake": {
+    "tempC": 210,
+    "time": 16,
+    "timeUnit": "minutes",
+    "notes": "Twisting the cutter seals the edge and stops the rise."
+  },
+  "notes": "Chilling before baking is what gives the height."
+}

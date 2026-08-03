@@ -1,0 +1,65 @@
+{
+  "id": "pastry-galette",
+  "name": "Galette Dough",
+  "category": "pastry",
+  "tags": [
+    "free form",
+    "fruit"
+  ],
+  "photo": "photos/pastry-galette.jpg",
+  "summary": "Rustic free-form tart base. Sturdy enough to hold fruit.",
+  "yield": {
+    "count": 2,
+    "unit": "piece",
+    "unitWeight": 320
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Unsalted butter",
+      "percent": 60,
+      "group": "fat"
+    },
+    {
+      "name": "Water",
+      "percent": 25,
+      "group": "liquid"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 4,
+      "group": "sugar"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Rub in butter leaving flat sheets rather than crumbs."
+    },
+    {
+      "text": "Add water, bring together, chill one hour."
+    },
+    {
+      "text": "Roll a rough round, pile fruit centre, fold the edge over."
+    },
+    {
+      "text": "Chill again before baking to set the folds."
+    }
+  ],
+  "bake": {
+    "tempC": 200,
+    "time": 40,
+    "timeUnit": "minutes",
+    "notes": "A layer of ground nuts under the fruit stops a soggy base."
+  },
+  "notes": "Flat butter sheets give the flaky layers here."
+}

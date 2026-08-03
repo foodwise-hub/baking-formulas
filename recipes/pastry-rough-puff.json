@@ -1,0 +1,60 @@
+{
+  "id": "pastry-rough-puff",
+  "name": "Rough Puff Pastry",
+  "category": "pastry",
+  "tags": [
+    "laminated",
+    "quick"
+  ],
+  "photo": "photos/pastry-rough-puff.jpg",
+  "summary": "Butter chunks worked in cold. Faster than classic puff.",
+  "yield": {
+    "count": 4,
+    "unit": "piece",
+    "unitWeight": 250
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Butter (lamination)",
+      "percent": 80,
+      "group": "fat"
+    },
+    {
+      "name": "Water",
+      "percent": 50,
+      "group": "liquid"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Rub cold butter into the flour, leaving large visible pieces."
+    },
+    {
+      "text": "Add water and bring together roughly. Do not smooth it."
+    },
+    {
+      "text": "Give four book folds with 30 minute chills between each."
+    },
+    {
+      "text": "Rest fully chilled before rolling out."
+    }
+  ],
+  "bake": {
+    "tempC": 210,
+    "time": 25,
+    "timeUnit": "minutes",
+    "notes": "Bake hot from cold or the butter melts before it steams."
+  },
+  "notes": "Visible butter streaks in the dough are correct, not a mistake."
+}

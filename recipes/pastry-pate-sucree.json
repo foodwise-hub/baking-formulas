@@ -1,0 +1,65 @@
+{
+  "id": "pastry-pate-sucree",
+  "name": "Pâte Sucrée",
+  "category": "pastry",
+  "tags": [
+    "sweet crust",
+    "tart"
+  ],
+  "photo": "photos/pastry-pate-sucree.jpg",
+  "summary": "Sweet, crisp, almost biscuit. Fruit tarts and lemon tarts.",
+  "yield": {
+    "count": 2,
+    "unit": "piece",
+    "unitWeight": 280
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Unsalted butter",
+      "percent": 55,
+      "group": "fat"
+    },
+    {
+      "name": "Powdered sugar",
+      "percent": 35,
+      "group": "sugar"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 18,
+      "group": "egg"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Cream the butter and sugar, then add the egg."
+    },
+    {
+      "text": "Add the flour and stop the moment it comes together."
+    },
+    {
+      "text": "Chill flat, roll cold, line the tin."
+    },
+    {
+      "text": "Blind bake to a full golden colour."
+    }
+  ],
+  "bake": {
+    "tempC": 175,
+    "time": 22,
+    "timeUnit": "minutes",
+    "notes": "Bake it darker than feels right. Pale sucrée goes soggy under filling."
+  },
+  "notes": "Rolling between parchment saves a lot of swearing."
+}

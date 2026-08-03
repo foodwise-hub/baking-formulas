@@ -1,0 +1,65 @@
+{
+  "id": "yeasted-ciabatta",
+  "name": "Ciabatta",
+  "category": "yeasted",
+  "tags": [
+    "very high hydration",
+    "no knead"
+  ],
+  "photo": "photos/yeasted-ciabatta.jpg",
+  "summary": "Slack, wet, wildly open. Poured rather than shaped.",
+  "yield": {
+    "count": 4,
+    "unit": "loaf",
+    "unitWeight": 400
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 80,
+      "group": "liquid"
+    },
+    {
+      "name": "Olive oil",
+      "percent": 2,
+      "group": "fat"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 0.6,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2.2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix to a batter-like dough. It should not hold shape."
+    },
+    {
+      "text": "Four sets of folds in the bowl, 30 minutes apart."
+    },
+    {
+      "text": "Tip onto a heavily floured bench and cut into rectangles."
+    },
+    {
+      "text": "Proof on a couche, transfer upside down to the oven."
+    }
+  ],
+  "bake": {
+    "tempC": 250,
+    "time": 22,
+    "timeUnit": "minutes",
+    "notes": "Handle as little as humanly possible. Every touch closes the crumb."
+  },
+  "notes": "Flour the bench far more heavily than seems reasonable."
+}

@@ -1,0 +1,65 @@
+{
+  "id": "yeasted-yeast-focaccia",
+  "name": "Focaccia",
+  "category": "yeasted",
+  "tags": [
+    "same day",
+    "pan"
+  ],
+  "photo": "photos/yeasted-yeast-focaccia.jpg",
+  "summary": "Same-day dimpled slab. Crisp base, steamy interior.",
+  "yield": {
+    "count": 2,
+    "unit": "loaf",
+    "unitWeight": 700
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 82,
+      "group": "liquid"
+    },
+    {
+      "name": "Olive oil",
+      "percent": 6,
+      "group": "fat"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 0.8,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2.2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix in a bowl with wet hands. No kneading."
+    },
+    {
+      "text": "Three sets of folds, 40 minutes apart."
+    },
+    {
+      "text": "Oil the pan generously, stretch the dough to fill."
+    },
+    {
+      "text": "Rest until bubbly, dimple hard, salt, bake."
+    }
+  ],
+  "bake": {
+    "tempC": 230,
+    "time": 24,
+    "timeUnit": "minutes",
+    "notes": "The pan should look over-oiled. That is what fries the base."
+  },
+  "notes": "Cold ferment overnight makes it better but it is fine same day."
+}

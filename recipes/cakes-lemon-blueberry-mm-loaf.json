@@ -1,0 +1,140 @@
+{
+  "id": "cakes-lemon-blueberry-mm-loaf",
+  "name": "Lemon Blueberry Loaf with Hidden M&M Band",
+  "category": "cakes",
+  "tags": [
+    "lemon",
+    "blueberry"
+  ],
+  "photo": "photos/cakes-lemon-blueberry-mm-loaf.jpg",
+  "summary": "Zested lemon batter with a hidden band of mini M&Ms and folded blueberries, glazed while barely warm.",
+  "yield": {
+    "count": 1,
+    "unit": "loaf",
+    "unitWeight": 1279
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Granulated sugar",
+      "percent": 90.9,
+      "group": "sugar"
+    },
+    {
+      "name": "Unsalted butter, softened to 18-20C",
+      "percent": 77.3,
+      "group": "fat"
+    },
+    {
+      "name": "Eggs, room temperature (about 3 large)",
+      "percent": 68.2,
+      "group": "egg"
+    },
+    {
+      "name": "Sour cream",
+      "percent": 54.5,
+      "group": "liquid"
+    },
+    {
+      "name": "Lemon zest",
+      "percent": 3.6,
+      "group": "flavour"
+    },
+    {
+      "name": "Lemon juice",
+      "percent": 13.6,
+      "group": "liquid"
+    },
+    {
+      "name": "Vanilla extract",
+      "percent": 2.3,
+      "group": "flavour"
+    },
+    {
+      "name": "Baking powder",
+      "percent": 2.7,
+      "group": "leaven"
+    },
+    {
+      "name": "Baking soda",
+      "percent": 0.7,
+      "group": "leaven"
+    },
+    {
+      "name": "Kosher salt",
+      "percent": 1.4,
+      "group": "salt"
+    },
+    {
+      "name": "Blueberries",
+      "percent": 68.2,
+      "group": "inclusion"
+    },
+    {
+      "name": "Mini M&Ms",
+      "percent": 36.4,
+      "group": "inclusion"
+    },
+    {
+      "name": "Confectioners sugar",
+      "percent": 54.5,
+      "group": "sugar"
+    },
+    {
+      "name": "Lemon juice",
+      "percent": 6.8,
+      "group": "liquid"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Heat the oven to 175C. Butter the loaf pan and line it lengthwise with parchment, leaving overhang on both long sides as a handle."
+    },
+    {
+      "text": "Put the granulated sugar in the mixing bowl and add the lemon zest. Rub together with fingertips for 30 seconds until the sugar is damp and strongly fragrant. Most lemon flavour lives in the peel oils, not the juice."
+    },
+    {
+      "text": "Add the softened butter to the lemon sugar and beat on medium-high for 3-4 minutes until pale and fluffy. Butter should be at 18-20C, denting under a finger but holding its shape. This step is what makes the batter thick enough to suspend the add-ins.",
+      "timerSeconds": 240
+    },
+    {
+      "text": "Add the eggs one at a time, beating well after each addition and scraping the bowl."
+    },
+    {
+      "text": "Whisk the flour, baking powder, baking soda and salt together in a separate bowl. Add to the creamed mixture in three additions, alternating with the sour cream and lemon juice, beginning and ending with the dry. Mix on low and stop the moment the last flour streaks disappear. Overmixing thins the batter and reintroduces the sinking problem."
+    },
+    {
+      "text": "Fold in the blueberries with 3 or 4 gentle strokes. Do not flour-coat them; the coating does little and the batter thickness is what actually holds them."
+    },
+    {
+      "text": "Cover and refrigerate the batter for 15 minutes. A colder, stiffer batter grips the add-ins instead of letting them drop through.",
+      "timerSeconds": 900
+    },
+    {
+      "text": "Scrape two thirds of the batter into the pan and smooth flat. Scatter 65 g of mini M&Ms evenly across the surface, keeping them 1 cm clear of all four edges so none melt against the hot pan. Dollop the remaining batter over the top rather than pouring it, then smooth gently so the candy is not dragged sideways. Press the last 15 g of M&Ms lightly into the surface. Positioning the band above the midpoint gives the candy less room to fall."
+    },
+    {
+      "text": "Bake 50-60 minutes, until deep golden and a skewer inserted in the centre comes out with moist crumbs but no wet batter. Aim between berries; hitting one gives a false wet reading. Start checking at 50 minutes. Tent loosely with foil if the top browns fast around the 35 minute mark.",
+      "timerSeconds": 3300
+    },
+    {
+      "text": "Cool in the pan on a rack for 10 minutes, then lift out by the parchment overhang and cool on the rack for another 25 minutes until barely warm. Glazing a hot loaf makes the glaze run straight off.",
+      "timerSeconds": 1500
+    },
+    {
+      "text": "Whisk the confectioners sugar with the lemon juice until it falls off the whisk in a thick ribbon. Adjust with a few drops of juice or a spoonful more sugar. Pour over the cooled loaf and let it set 5 minutes before slicing."
+    }
+  ],
+  "bake": {
+    "tempC": 175,
+    "time": 55,
+    "timeUnit": "minutes",
+    "notes": "Start checking at 50 minutes; tent loosely with foil if the top browns before the centre sets."
+  },
+  "notes": "ANTI-SINK: the fix is batter viscosity, not flour-coating the add-ins. Creamed butter, a 15 minute chill, and placing the band above the midpoint are what keep them suspended. Flour coating is close to a myth for dry add-ins such as candy shells.\n\nDO NOT MELT THE BUTTER: a melted-butter version is faster and gives a denser crumb, but the thinner batter is exactly what caused the add-ins to sink on the first bake.\n\nNO MARSHMALLOWS: they liquefy over a 55 minute bake and leave hollow tunnels. They only work scattered on top for the last 10 minutes.\n\nEDGE CLEARANCE: candy touching the hot pan melts, sticks and tears the loaf when unmolding.\n\nLEMONS: 2 lemons give all the zest needed plus about 45 g of juice, which covers both the batter and the glaze.\n\nEXPECT faint colour halos in the crumb around each M&M where the shells bleed. Normal.\n\nFROZEN BLUEBERRIES: add them frozen, do not thaw, and add 5 minutes to the bake."
+}

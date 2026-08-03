@@ -1,0 +1,65 @@
+{
+  "id": "pizza-neapolitan",
+  "name": "Neapolitan Base",
+  "category": "pizza",
+  "tags": [
+    "24h cold",
+    "00 flour"
+  ],
+  "photo": "photos/pizza-neapolitan.jpg",
+  "summary": "Long cold ferment. Puffy cornicione, thin centre, leopard spots.",
+  "yield": {
+    "count": 6,
+    "unit": "ball",
+    "unitWeight": 250
+  },
+  "flours": [
+    {
+      "name": "00 flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 62,
+      "group": "liquid"
+    },
+    {
+      "name": "Levain / starter",
+      "percent": 12,
+      "group": "leaven",
+      "isLevain": true,
+      "levainHydration": 100
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2.8,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Dissolve salt in the water, add flour and leaven, mix to a shaggy mass."
+    },
+    {
+      "text": "Rest 20 minutes then knead until smooth."
+    },
+    {
+      "text": "Bulk at room temperature."
+    },
+    {
+      "text": "Divide into balls, box, cold ferment 24 hours."
+    },
+    {
+      "text": "Temper before stretching."
+    }
+  ],
+  "bake": {
+    "tempC": 480,
+    "time": 90,
+    "timeUnit": "seconds",
+    "notes": "Domestic oven: steel on the top rack at max heat, 6 to 7 minutes with a final broil."
+  },
+  "notes": "62% is the sweet spot for hand stretching."
+}

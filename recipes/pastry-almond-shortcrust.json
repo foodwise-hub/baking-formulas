@@ -1,0 +1,66 @@
+{
+  "id": "pastry-almond-shortcrust",
+  "name": "Almond Shortcrust",
+  "category": "pastry",
+  "tags": [
+    "nut crust",
+    "tart"
+  ],
+  "photo": "photos/pastry-almond-shortcrust.jpg",
+  "summary": "Nutty, fragile, excellent under set custards.",
+  "yield": {
+    "count": 2,
+    "unit": "piece",
+    "unitWeight": 300
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 80
+    },
+    {
+      "name": "Almond flour",
+      "percent": 20
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Unsalted butter",
+      "percent": 55,
+      "group": "fat"
+    },
+    {
+      "name": "Powdered sugar",
+      "percent": 30,
+      "group": "sugar"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 15,
+      "group": "egg"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Cream butter and sugar, add egg, then both flours."
+    },
+    {
+      "text": "Press into the tin rather than rolling. It tears easily."
+    },
+    {
+      "text": "Freeze the shell, then blind bake."
+    }
+  ],
+  "bake": {
+    "tempC": 170,
+    "time": 25,
+    "timeUnit": "minutes",
+    "notes": "Lower temperature than plain sucrée. The almond browns fast."
+  },
+  "notes": "Pressing in beats rolling for this one."
+}

@@ -1,0 +1,67 @@
+{
+  "id": "pastry-biscuits",
+  "name": "Buttermilk Biscuits",
+  "category": "pastry",
+  "tags": [
+    "quick",
+    "laminated fold"
+  ],
+  "photo": "photos/pastry-biscuits.jpg",
+  "summary": "Laminated by folding. Layers you can peel apart.",
+  "yield": {
+    "count": 9,
+    "unit": "piece",
+    "unitWeight": 75
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Unsalted butter",
+      "percent": 35,
+      "group": "fat"
+    },
+    {
+      "name": "Buttermilk",
+      "percent": 65,
+      "group": "liquid"
+    },
+    {
+      "name": "Baking powder",
+      "percent": 5,
+      "group": "leaven"
+    },
+    {
+      "name": "Baking soda",
+      "percent": 0.5,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Grate frozen butter into the dry ingredients."
+    },
+    {
+      "text": "Add buttermilk, bring together, then fold the dough over itself four times."
+    },
+    {
+      "text": "Cut straight down and place touching on the tray."
+    }
+  ],
+  "bake": {
+    "tempC": 220,
+    "time": 14,
+    "timeUnit": "minutes",
+    "notes": "Sides touching forces them upward instead of outward."
+  },
+  "notes": "Grated frozen butter beats cubed every time."
+}

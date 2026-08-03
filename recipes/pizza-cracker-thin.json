@@ -1,0 +1,67 @@
+{
+  "id": "pizza-cracker-thin",
+  "name": "Thin & Crispy",
+  "category": "pizza",
+  "tags": [
+    "cracker crust",
+    "rolled"
+  ],
+  "photo": "photos/pizza-cracker-thin.jpg",
+  "summary": "Low hydration, rolled paper thin, no rim at all.",
+  "yield": {
+    "count": 4,
+    "unit": "ball",
+    "unitWeight": 200
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 45,
+      "group": "liquid"
+    },
+    {
+      "name": "Olive oil",
+      "percent": 5,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 1,
+      "group": "sugar"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 0.4,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix a very stiff dough. Rest one hour only."
+    },
+    {
+      "text": "Roll as thin as the pin will take it. Dock all over with a fork."
+    },
+    {
+      "text": "Top sparingly. Weight is the enemy here."
+    }
+  ],
+  "bake": {
+    "tempC": 260,
+    "time": 7,
+    "timeUnit": "minutes",
+    "notes": "Docking stops it puffing. Do it thoroughly."
+  },
+  "notes": "Any more than 45% hydration and it stops being a cracker."
+}

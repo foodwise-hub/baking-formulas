@@ -1,0 +1,80 @@
+{
+  "id": "cakes-rye-chunk",
+  "name": "Rye Chocolate Chunk",
+  "category": "cakes",
+  "tags": [
+    "rye",
+    "dark chocolate"
+  ],
+  "photo": "photos/cakes-rye-chunk.jpg",
+  "summary": "Rye flour against dark chocolate. Earthy and less sweet.",
+  "yield": {
+    "count": 16,
+    "unit": "piece",
+    "unitWeight": 55
+  },
+  "flours": [
+    {
+      "name": "Rye flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Dark chocolate, chopped",
+      "percent": 80,
+      "group": "inclusion"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 60,
+      "group": "fat"
+    },
+    {
+      "name": "Brown sugar",
+      "percent": 55,
+      "group": "sugar"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 25,
+      "group": "sugar"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 30,
+      "group": "egg"
+    },
+    {
+      "name": "Baking soda",
+      "percent": 1.2,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Cream butter and sugars, beat in the egg."
+    },
+    {
+      "text": "Fold in the rye flour, soda and salt."
+    },
+    {
+      "text": "Fold in chopped chocolate and rest the dough overnight."
+    },
+    {
+      "text": "Scoop, salt the tops, bake."
+    }
+  ],
+  "bake": {
+    "tempC": 185,
+    "time": 12,
+    "timeUnit": "minutes",
+    "notes": "Rye spreads more than wheat. Space them generously."
+  },
+  "notes": "Less sweet than a wheat cookie, which is the point."
+}

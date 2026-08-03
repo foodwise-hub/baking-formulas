@@ -1,0 +1,85 @@
+{
+  "id": "cakes-gingerbread",
+  "name": "Gingerbread Cookies",
+  "category": "cakes",
+  "tags": [
+    "spiced",
+    "rolled"
+  ],
+  "photo": "photos/cakes-gingerbread.jpg",
+  "summary": "Molasses, ginger, snap. Rolls thin and holds shape.",
+  "yield": {
+    "count": 20,
+    "unit": "piece",
+    "unitWeight": 40
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Unsalted butter",
+      "percent": 40,
+      "group": "fat"
+    },
+    {
+      "name": "Brown sugar",
+      "percent": 40,
+      "group": "sugar"
+    },
+    {
+      "name": "Molasses",
+      "percent": 30,
+      "group": "sugar"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 15,
+      "group": "egg"
+    },
+    {
+      "name": "Ground ginger",
+      "percent": 3,
+      "group": "flavour"
+    },
+    {
+      "name": "Cinnamon",
+      "percent": 3,
+      "group": "flavour"
+    },
+    {
+      "name": "Baking soda",
+      "percent": 1.2,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Cream butter and sugar, add molasses and egg."
+    },
+    {
+      "text": "Add the dry ingredients and spices."
+    },
+    {
+      "text": "Chill the dough overnight to hydrate the spices."
+    },
+    {
+      "text": "Roll thin, cut, and bake until just firm at the edge."
+    }
+  ],
+  "bake": {
+    "tempC": 175,
+    "time": 10,
+    "timeUnit": "minutes",
+    "notes": "Thin rolling gives snap. Thick gives a soft cookie."
+  },
+  "notes": "The overnight chill deepens the spice noticeably."
+}

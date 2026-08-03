@@ -1,0 +1,90 @@
+{
+  "id": "cakes-choc-layer",
+  "name": "Chocolate Layer Cake",
+  "category": "cakes",
+  "tags": [
+    "oil based",
+    "moist"
+  ],
+  "photo": "photos/cakes-choc-layer.jpg",
+  "summary": "Oil-based, hot coffee bloomed cocoa. Stays moist for days.",
+  "yield": {
+    "count": 2,
+    "unit": "piece",
+    "unitWeight": 450
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Cocoa powder",
+      "percent": 35,
+      "group": "flavour"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 130,
+      "group": "sugar"
+    },
+    {
+      "name": "Buttermilk",
+      "percent": 90,
+      "group": "liquid"
+    },
+    {
+      "name": "Neutral oil",
+      "percent": 45,
+      "group": "fat"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 55,
+      "group": "egg"
+    },
+    {
+      "name": "Brewed coffee",
+      "percent": 45,
+      "group": "liquid"
+    },
+    {
+      "name": "Baking soda",
+      "percent": 2,
+      "group": "leaven"
+    },
+    {
+      "name": "Baking powder",
+      "percent": 2,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Whisk all the dry ingredients together thoroughly."
+    },
+    {
+      "text": "Add buttermilk, oil and eggs and whisk to smooth."
+    },
+    {
+      "text": "Pour in the hot coffee last. The batter will be very thin."
+    },
+    {
+      "text": "Bake and cool fully in the tins."
+    }
+  ],
+  "bake": {
+    "tempC": 175,
+    "time": 32,
+    "timeUnit": "minutes",
+    "notes": "A thin batter is correct. Do not add flour to thicken it."
+  },
+  "notes": "Hot coffee blooms the cocoa. Do not skip or cool it."
+}

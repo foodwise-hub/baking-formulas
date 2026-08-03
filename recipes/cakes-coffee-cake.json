@@ -1,0 +1,90 @@
+{
+  "id": "cakes-coffee-cake",
+  "name": "Sour Cream Coffee Cake",
+  "category": "cakes",
+  "tags": [
+    "streusel",
+    "brunch"
+  ],
+  "photo": "photos/cakes-coffee-cake.jpg",
+  "summary": "Cinnamon streusel ripple. Tender from the sour cream.",
+  "yield": {
+    "count": 1,
+    "unit": "piece",
+    "unitWeight": 900
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Sour cream",
+      "percent": 70,
+      "group": "liquid"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 70,
+      "group": "sugar"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 50,
+      "group": "fat"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 40,
+      "group": "egg"
+    },
+    {
+      "name": "Brown sugar",
+      "percent": 30,
+      "group": "sugar"
+    },
+    {
+      "name": "Cinnamon",
+      "percent": 3,
+      "group": "flavour"
+    },
+    {
+      "name": "Baking powder",
+      "percent": 3,
+      "group": "leaven"
+    },
+    {
+      "name": "Baking soda",
+      "percent": 1,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.5,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Cream butter and sugar, add eggs, then sour cream."
+    },
+    {
+      "text": "Fold in the dry ingredients."
+    },
+    {
+      "text": "Layer half the batter, all the cinnamon streusel, then the rest."
+    },
+    {
+      "text": "Bake until a skewer comes out with a few crumbs."
+    }
+  ],
+  "bake": {
+    "tempC": 175,
+    "time": 45,
+    "timeUnit": "minutes",
+    "notes": "Reserve some streusel for the top as well as the middle."
+  },
+  "notes": "Sour cream is what keeps it tender for days."
+}

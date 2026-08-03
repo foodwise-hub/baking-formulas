@@ -1,0 +1,62 @@
+{
+  "id": "sourdough-baguette",
+  "name": "Sourdough Baguette",
+  "category": "sourdough",
+  "tags": [
+    "shaped",
+    "same day"
+  ],
+  "photo": "photos/sourdough-baguette.jpg",
+  "summary": "Thin crust, open irregular crumb, aggressive scoring.",
+  "yield": {
+    "count": 4,
+    "unit": "loaf",
+    "unitWeight": 320
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 72,
+      "group": "liquid"
+    },
+    {
+      "name": "Levain / starter",
+      "percent": 15,
+      "group": "leaven",
+      "isLevain": true,
+      "levainHydration": 100
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Autolyse one hour, then add levain and salt."
+    },
+    {
+      "text": "Bulk three hours with folds every 45 minutes."
+    },
+    {
+      "text": "Divide, pre-shape, rest 30 minutes, shape long."
+    },
+    {
+      "text": "Proof in couche, score five overlapping slashes."
+    }
+  ],
+  "bake": {
+    "tempC": 250,
+    "time": 22,
+    "timeUnit": "minutes",
+    "notes": "Maximum steam for the first 12 minutes, then vent completely."
+  },
+  "notes": "Scoring at a shallow angle is what opens the ears."
+}

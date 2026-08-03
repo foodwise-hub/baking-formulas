@@ -1,0 +1,77 @@
+{
+  "id": "cakes-snickerdoodle",
+  "name": "Snickerdoodles",
+  "category": "cakes",
+  "tags": [
+    "tangy",
+    "rolled"
+  ],
+  "photo": "photos/cakes-snickerdoodle.jpg",
+  "summary": "Cream of tartar tang, cinnamon sugar crust, crackled top.",
+  "yield": {
+    "count": 20,
+    "unit": "piece",
+    "unitWeight": 50
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Unsalted butter",
+      "percent": 55,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 70,
+      "group": "sugar"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 25,
+      "group": "egg"
+    },
+    {
+      "name": "Cinnamon",
+      "percent": 2,
+      "group": "flavour"
+    },
+    {
+      "name": "Cream of tartar",
+      "percent": 2,
+      "group": "leaven"
+    },
+    {
+      "name": "Baking soda",
+      "percent": 1,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Cream butter and sugar, beat in the egg."
+    },
+    {
+      "text": "Fold in flour, tartar, soda and salt."
+    },
+    {
+      "text": "Roll balls in cinnamon sugar and bake without flattening."
+    }
+  ],
+  "bake": {
+    "tempC": 180,
+    "time": 10,
+    "timeUnit": "minutes",
+    "notes": "Underbake by a minute for the classic soft centre."
+  },
+  "notes": "Cream of tartar is what makes it a snickerdoodle, not a sugar cookie."
+}

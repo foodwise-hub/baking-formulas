@@ -1,0 +1,75 @@
+{
+  "id": "cakes-pound-cake",
+  "name": "Pound Cake",
+  "category": "cakes",
+  "tags": [
+    "classic ratio",
+    "loaf"
+  ],
+  "photo": "photos/cakes-pound-cake.jpg",
+  "summary": "Equal weights of flour, butter, sugar and egg.",
+  "yield": {
+    "count": 1,
+    "unit": "piece",
+    "unitWeight": 900
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Unsalted butter",
+      "percent": 100,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 100,
+      "group": "sugar"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 100,
+      "group": "egg"
+    },
+    {
+      "name": "Vanilla extract",
+      "percent": 3,
+      "group": "flavour"
+    },
+    {
+      "name": "Baking powder",
+      "percent": 1,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.5,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Have every ingredient at exactly room temperature."
+    },
+    {
+      "text": "Cream butter and sugar for six minutes until very light."
+    },
+    {
+      "text": "Add egg extremely slowly to avoid splitting."
+    },
+    {
+      "text": "Fold in flour and bake low and slow."
+    }
+  ],
+  "bake": {
+    "tempC": 160,
+    "time": 60,
+    "timeUnit": "minutes",
+    "notes": "Cold eggs split the batter. That is the one failure mode."
+  },
+  "notes": "Low and slow, or the outside sets before the middle rises."
+}

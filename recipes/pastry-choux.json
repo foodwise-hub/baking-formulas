@@ -1,0 +1,70 @@
+{
+  "id": "pastry-choux",
+  "name": "Choux Paste",
+  "category": "pastry",
+  "tags": [
+    "cooked paste",
+    "steam raised"
+  ],
+  "photo": "photos/pastry-choux.jpg",
+  "summary": "Cooked paste, dried on the heat, raised entirely by steam.",
+  "yield": {
+    "count": 16,
+    "unit": "piece",
+    "unitWeight": 40
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 120,
+      "group": "liquid"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 75,
+      "group": "fat"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 175,
+      "group": "egg"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 4,
+      "group": "sugar"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Boil water, butter, sugar and salt. Add flour all at once."
+    },
+    {
+      "text": "Cook the paste on the heat until it films the pan base."
+    },
+    {
+      "text": "Cool to warm, then beat in egg gradually to a V-shaped ribbon."
+    },
+    {
+      "text": "Pipe and bake without opening the oven."
+    }
+  ],
+  "bake": {
+    "tempC": 200,
+    "time": 30,
+    "timeUnit": "minutes",
+    "notes": "Drop to 175°C after 15 minutes. Opening the door early collapses them."
+  },
+  "notes": "Drying the paste properly matters more than the egg quantity."
+}

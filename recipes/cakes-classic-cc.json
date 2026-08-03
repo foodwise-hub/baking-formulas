@@ -1,0 +1,85 @@
+{
+  "id": "cakes-classic-cc",
+  "name": "Classic Chocolate Chip",
+  "category": "cakes",
+  "tags": [
+    "same day",
+    "classic"
+  ],
+  "photo": "photos/cakes-classic-cc.jpg",
+  "summary": "The standard. Chewy centre, crisp edge, no waiting.",
+  "yield": {
+    "count": 18,
+    "unit": "piece",
+    "unitWeight": 50
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Unsalted butter",
+      "percent": 65,
+      "group": "fat"
+    },
+    {
+      "name": "Brown sugar",
+      "percent": 45,
+      "group": "sugar"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 40,
+      "group": "sugar"
+    },
+    {
+      "name": "Chocolate chips",
+      "percent": 75,
+      "group": "inclusion"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 30,
+      "group": "egg"
+    },
+    {
+      "name": "Vanilla extract",
+      "percent": 3,
+      "group": "flavour"
+    },
+    {
+      "name": "Baking soda",
+      "percent": 1.2,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.5,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Cream softened butter with both sugars until pale."
+    },
+    {
+      "text": "Beat in egg and vanilla."
+    },
+    {
+      "text": "Fold in flour, soda and salt, then the chips."
+    },
+    {
+      "text": "Scoop and bake straight away."
+    }
+  ],
+  "bake": {
+    "tempC": 180,
+    "time": 12,
+    "timeUnit": "minutes",
+    "notes": "Rotate the tray halfway. Edges set before centres."
+  },
+  "notes": "Chilling an hour improves them but is not required."
+}

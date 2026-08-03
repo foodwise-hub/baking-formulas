@@ -1,0 +1,70 @@
+{
+  "id": "pastry-kouign-amann",
+  "name": "Kouign-Amann",
+  "category": "pastry",
+  "tags": [
+    "laminated",
+    "caramelised"
+  ],
+  "photo": "photos/pastry-kouign-amann.jpg",
+  "summary": "Laminated with sugar. Caramelised, crunchy, obscene.",
+  "yield": {
+    "count": 10,
+    "unit": "piece",
+    "unitWeight": 95
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 55,
+      "group": "liquid"
+    },
+    {
+      "name": "Butter (lamination)",
+      "percent": 50,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 45,
+      "group": "sugar"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 1.5,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Make a simple lean dough and chill."
+    },
+    {
+      "text": "Lock in butter, then fold with sugar dusted into each turn."
+    },
+    {
+      "text": "Cut squares, fold corners in, place in buttered rings."
+    },
+    {
+      "text": "Proof, then bake until the sugar runs dark."
+    }
+  ],
+  "bake": {
+    "tempC": 200,
+    "time": 28,
+    "timeUnit": "minutes",
+    "notes": "Bake on a lined tray. The caramel will run and it will burn onto bare metal."
+  },
+  "notes": "The sugar folds are what makes it. Do not be shy with them."
+}

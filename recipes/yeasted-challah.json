@@ -1,0 +1,80 @@
+{
+  "id": "yeasted-challah",
+  "name": "Challah",
+  "category": "yeasted",
+  "tags": [
+    "braided",
+    "dairy free"
+  ],
+  "photo": "photos/yeasted-challah.jpg",
+  "summary": "Braided, glossy, faintly sweet. Oil rather than butter.",
+  "yield": {
+    "count": 2,
+    "unit": "loaf",
+    "unitWeight": 700
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 30,
+      "group": "liquid"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 25,
+      "group": "egg"
+    },
+    {
+      "name": "Egg yolk",
+      "percent": 10,
+      "group": "egg"
+    },
+    {
+      "name": "Neutral oil",
+      "percent": 12,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 12,
+      "group": "sugar"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 1.5,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix to a smooth, slightly tacky dough. Knead ten minutes."
+    },
+    {
+      "text": "Bulk until doubled."
+    },
+    {
+      "text": "Divide into strands and braid firmly."
+    },
+    {
+      "text": "Proof, egg wash twice, and seed heavily."
+    }
+  ],
+  "bake": {
+    "tempC": 175,
+    "time": 30,
+    "timeUnit": "minutes",
+    "notes": "Two egg washes, 20 minutes apart, gives the deep lacquer."
+  },
+  "notes": "Six strands looks better than three and is barely harder."
+}

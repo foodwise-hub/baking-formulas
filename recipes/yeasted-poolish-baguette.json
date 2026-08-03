@@ -1,0 +1,60 @@
+{
+  "id": "yeasted-poolish-baguette",
+  "name": "Poolish Baguette",
+  "category": "yeasted",
+  "tags": [
+    "preferment",
+    "overnight"
+  ],
+  "photo": "photos/yeasted-poolish-baguette.jpg",
+  "summary": "Overnight preferment. Cream-coloured crumb, nutty crust.",
+  "yield": {
+    "count": 4,
+    "unit": "loaf",
+    "unitWeight": 320
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 70,
+      "group": "liquid"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 0.5,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Build a poolish with a third of the flour and equal water. Ferment overnight."
+    },
+    {
+      "text": "Mix the poolish with remaining flour, water, yeast and salt."
+    },
+    {
+      "text": "Bulk two hours with folds."
+    },
+    {
+      "text": "Divide, shape, proof and score."
+    }
+  ],
+  "bake": {
+    "tempC": 250,
+    "time": 22,
+    "timeUnit": "minutes",
+    "notes": "Heavy steam early. Vent for the last eight minutes."
+  },
+  "notes": "The poolish does more for flavour than any technique here."
+}

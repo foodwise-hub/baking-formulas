@@ -1,0 +1,65 @@
+{
+  "id": "pizza-roman-taglio",
+  "name": "Roman Al Taglio",
+  "category": "pizza",
+  "tags": [
+    "very high hydration",
+    "tray"
+  ],
+  "photo": "photos/pizza-roman-taglio.jpg",
+  "summary": "Very wet, very light, cut with scissors and sold by weight.",
+  "yield": {
+    "count": 2,
+    "unit": "ball",
+    "unitWeight": 600
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 80,
+      "group": "liquid"
+    },
+    {
+      "name": "Olive oil",
+      "percent": 3,
+      "group": "fat"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 0.5,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2.2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix to a batter-like dough with wet hands."
+    },
+    {
+      "text": "Four folds in the bowl, then cold ferment 24 hours."
+    },
+    {
+      "text": "Tip gently into an oiled tray, stretch without degassing."
+    },
+    {
+      "text": "Rest until bubbly, top lightly, bake hot."
+    }
+  ],
+  "bake": {
+    "tempC": 270,
+    "time": 12,
+    "timeUnit": "minutes",
+    "notes": "Par-bake the base before topping for a crisper result."
+  },
+  "notes": "Degassing kills it. Move the dough as little as possible."
+}

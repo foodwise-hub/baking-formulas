@@ -1,0 +1,82 @@
+{
+  "id": "pastry-croissant",
+  "name": "Croissant Dough",
+  "category": "pastry",
+  "tags": [
+    "laminated",
+    "overnight"
+  ],
+  "photo": "photos/pastry-croissant.jpg",
+  "summary": "Three single folds. Honeycomb crumb, shattering exterior.",
+  "yield": {
+    "count": 12,
+    "unit": "piece",
+    "unitWeight": 80
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 70
+    },
+    {
+      "name": "All-purpose flour",
+      "percent": 30
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Whole milk",
+      "percent": 55,
+      "group": "liquid"
+    },
+    {
+      "name": "Butter (lamination)",
+      "percent": 50,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 10,
+      "group": "sugar"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 5,
+      "group": "fat"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 1.6,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix the detrempe to a shaggy dough. Do not develop it. Chill overnight."
+    },
+    {
+      "text": "Beat the lamination butter into a flat pliable slab."
+    },
+    {
+      "text": "Lock in and give three single folds, resting 45 minutes between each."
+    },
+    {
+      "text": "Sheet to 4 mm, cut triangles, roll."
+    },
+    {
+      "text": "Proof at 24 to 26°C until visibly jiggly."
+    }
+  ],
+  "bake": {
+    "tempC": 200,
+    "time": 18,
+    "timeUnit": "minutes",
+    "notes": "Drop to 180°C after 10 minutes. Butter must never break through."
+  },
+  "notes": "The 45-minute rests are non-negotiable."
+}

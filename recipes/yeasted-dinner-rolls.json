@@ -1,0 +1,75 @@
+{
+  "id": "yeasted-dinner-rolls",
+  "name": "Dinner Rolls",
+  "category": "yeasted",
+  "tags": [
+    "soft",
+    "pan rolls"
+  ],
+  "photo": "photos/yeasted-dinner-rolls.jpg",
+  "summary": "Soft, pull-apart, brushed with butter out of the oven.",
+  "yield": {
+    "count": 12,
+    "unit": "loaf",
+    "unitWeight": 60
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Whole milk",
+      "percent": 55,
+      "group": "liquid"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 12,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 8,
+      "group": "sugar"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 10,
+      "group": "egg"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 1.5,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix and knead to a soft, smooth dough."
+    },
+    {
+      "text": "Bulk until doubled."
+    },
+    {
+      "text": "Divide, roll tight, arrange touching in a pan."
+    },
+    {
+      "text": "Proof until the rolls press against each other."
+    }
+  ],
+  "bake": {
+    "tempC": 180,
+    "time": 20,
+    "timeUnit": "minutes",
+    "notes": "Brush with melted butter the second they leave the oven."
+  },
+  "notes": "Rolling them tight is what gives the tall spring."
+}

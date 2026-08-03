@@ -1,0 +1,84 @@
+{
+  "id": "pastry-danish",
+  "name": "Danish Pastry",
+  "category": "pastry",
+  "tags": [
+    "laminated",
+    "cardamom"
+  ],
+  "photo": "photos/pastry-danish.jpg",
+  "summary": "Enriched laminated dough with cardamom. Softer than croissant.",
+  "yield": {
+    "count": 12,
+    "unit": "piece",
+    "unitWeight": 75
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 60
+    },
+    {
+      "name": "All-purpose flour",
+      "percent": 40
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Whole milk",
+      "percent": 40,
+      "group": "liquid"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 15,
+      "group": "egg"
+    },
+    {
+      "name": "Butter (lamination)",
+      "percent": 45,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 12,
+      "group": "sugar"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 2,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.8,
+      "group": "salt"
+    },
+    {
+      "name": "Cardamom",
+      "percent": 1,
+      "group": "flavour"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mix the dough with the cardamom. Chill thoroughly."
+    },
+    {
+      "text": "Lock in the butter and give three single folds."
+    },
+    {
+      "text": "Sheet, cut, and shape into pinwheels or envelopes."
+    },
+    {
+      "text": "Fill, proof, egg wash, bake."
+    }
+  ],
+  "bake": {
+    "tempC": 200,
+    "time": 16,
+    "timeUnit": "minutes",
+    "notes": "Egg richer than croissant dough, so it colours faster."
+  },
+  "notes": "Freshly ground cardamom is worth the trouble."
+}

@@ -1,0 +1,90 @@
+{
+  "id": "cakes-carrot-cake",
+  "name": "Carrot Cake",
+  "category": "cakes",
+  "tags": [
+    "spiced",
+    "oil based"
+  ],
+  "photo": "photos/cakes-carrot-cake.jpg",
+  "summary": "Oil, spice, nuts. Dense and forgiving.",
+  "yield": {
+    "count": 2,
+    "unit": "piece",
+    "unitWeight": 500
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Neutral oil",
+      "percent": 75,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 70,
+      "group": "sugar"
+    },
+    {
+      "name": "Brown sugar",
+      "percent": 40,
+      "group": "sugar"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 55,
+      "group": "egg"
+    },
+    {
+      "name": "Walnuts",
+      "percent": 35,
+      "group": "inclusion"
+    },
+    {
+      "name": "Cinnamon",
+      "percent": 3,
+      "group": "flavour"
+    },
+    {
+      "name": "Baking soda",
+      "percent": 2,
+      "group": "leaven"
+    },
+    {
+      "name": "Baking powder",
+      "percent": 2,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Whisk oil, sugars and eggs until emulsified."
+    },
+    {
+      "text": "Fold in the dry ingredients and spices."
+    },
+    {
+      "text": "Fold in grated carrot and toasted walnuts."
+    },
+    {
+      "text": "Bake and cool fully before frosting."
+    }
+  ],
+  "bake": {
+    "tempC": 175,
+    "time": 35,
+    "timeUnit": "minutes",
+    "notes": "Weigh the grated carrot at roughly 130% of the flour weight."
+  },
+  "notes": "Squeeze wet carrots or the crumb turns soggy."
+}

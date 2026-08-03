@@ -1,0 +1,67 @@
+{
+  "id": "pastry-eclair",
+  "name": "Éclair Shells",
+  "category": "pastry",
+  "tags": [
+    "piped",
+    "choux"
+  ],
+  "photo": "photos/pastry-eclair.jpg",
+  "summary": "Piped long, split for filling. Same paste, tighter discipline.",
+  "yield": {
+    "count": 14,
+    "unit": "piece",
+    "unitWeight": 45
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Water",
+      "percent": 120,
+      "group": "liquid"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 75,
+      "group": "fat"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 170,
+      "group": "egg"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 4,
+      "group": "sugar"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Make the paste as for choux, slightly stiffer."
+    },
+    {
+      "text": "Pipe even lengths with a star tip to control splitting."
+    },
+    {
+      "text": "Bake without opening the door, then vent and dry out."
+    }
+  ],
+  "bake": {
+    "tempC": 200,
+    "time": 32,
+    "timeUnit": "minutes",
+    "notes": "Pierce the base as they leave the oven so steam escapes."
+  },
+  "notes": "A star tip gives straighter shells than a plain round."
+}

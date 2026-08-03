@@ -1,0 +1,65 @@
+{
+  "id": "pastry-rugelach",
+  "name": "Rugelach",
+  "category": "pastry",
+  "tags": [
+    "cream cheese",
+    "rolled"
+  ],
+  "photo": "photos/pastry-rugelach.jpg",
+  "summary": "Cream cheese dough. Tender, tangy, rolled around filling.",
+  "yield": {
+    "count": 24,
+    "unit": "piece",
+    "unitWeight": 30
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Unsalted butter",
+      "percent": 50,
+      "group": "fat"
+    },
+    {
+      "name": "Cream cheese",
+      "percent": 50,
+      "group": "fat"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 10,
+      "group": "sugar"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.5,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Beat butter and cream cheese smooth, then add flour."
+    },
+    {
+      "text": "Chill in discs at least three hours."
+    },
+    {
+      "text": "Roll thin, cut wedges, spread filling and roll from the wide end."
+    },
+    {
+      "text": "Chill the shaped pieces before baking."
+    }
+  ],
+  "bake": {
+    "tempC": 180,
+    "time": 24,
+    "timeUnit": "minutes",
+    "notes": "Chilling shaped pieces stops the filling running out."
+  },
+  "notes": "The dough is unworkable unless properly cold."
+}

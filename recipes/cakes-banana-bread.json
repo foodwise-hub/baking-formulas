@@ -1,0 +1,80 @@
+{
+  "id": "cakes-banana-bread",
+  "name": "Banana Bread",
+  "category": "cakes",
+  "tags": [
+    "loaf",
+    "quick bread"
+  ],
+  "photo": "photos/cakes-banana-bread.jpg",
+  "summary": "Loaf tin, very ripe fruit, walnuts through.",
+  "yield": {
+    "count": 1,
+    "unit": "piece",
+    "unitWeight": 900
+  },
+  "flours": [
+    {
+      "name": "All-purpose flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Brown sugar",
+      "percent": 55,
+      "group": "sugar"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 40,
+      "group": "fat"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 35,
+      "group": "egg"
+    },
+    {
+      "name": "Walnuts",
+      "percent": 30,
+      "group": "inclusion"
+    },
+    {
+      "name": "Vanilla extract",
+      "percent": 3,
+      "group": "flavour"
+    },
+    {
+      "name": "Baking soda",
+      "percent": 2,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 1.5,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Mash very ripe bananas, roughly 120% of the flour weight."
+    },
+    {
+      "text": "Melt the butter and mix with sugar, egg and banana."
+    },
+    {
+      "text": "Fold in flour, soda and salt, then the walnuts."
+    },
+    {
+      "text": "Bake in a lined loaf tin until a skewer comes out clean."
+    }
+  ],
+  "bake": {
+    "tempC": 175,
+    "time": 55,
+    "timeUnit": "minutes",
+    "notes": "Tent with foil at 35 minutes if the top darkens early."
+  },
+  "notes": "The blacker the bananas, the better the loaf."
+}

@@ -1,0 +1,79 @@
+{
+  "id": "yeasted-milk-loaf",
+  "name": "Soft Milk Loaf",
+  "category": "yeasted",
+  "tags": [
+    "enriched",
+    "same day",
+    "tin"
+  ],
+  "photo": "photos/yeasted-milk-loaf.jpg",
+  "summary": "Enriched sandwich loaf. Feathery crumb that stays soft for days.",
+  "yield": {
+    "count": 2,
+    "unit": "loaf",
+    "unitWeight": 800
+  },
+  "flours": [
+    {
+      "name": "Bread flour",
+      "percent": 100
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Whole milk",
+      "percent": 62,
+      "group": "liquid"
+    },
+    {
+      "name": "Whole egg",
+      "percent": 10,
+      "group": "egg"
+    },
+    {
+      "name": "Granulated sugar",
+      "percent": 10,
+      "group": "sugar"
+    },
+    {
+      "name": "Unsalted butter",
+      "percent": 10,
+      "group": "fat"
+    },
+    {
+      "name": "Instant yeast",
+      "percent": 1.2,
+      "group": "leaven"
+    },
+    {
+      "name": "Fine sea salt",
+      "percent": 2,
+      "group": "salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Warm the milk to blood temperature and mix everything except the butter."
+    },
+    {
+      "text": "Knead, then add softened butter piece by piece to a full windowpane."
+    },
+    {
+      "text": "Bulk until doubled."
+    },
+    {
+      "text": "Divide, roll flat, roll up, place seam down in a tin."
+    },
+    {
+      "text": "Proof until the dough crowns the tin."
+    }
+  ],
+  "bake": {
+    "tempC": 180,
+    "time": 32,
+    "timeUnit": "minutes",
+    "notes": "Egg wash before baking. Tent with foil if it colours early."
+  },
+  "notes": "A milk scald would give a softer crumb still."
+}
