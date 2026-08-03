@@ -26,12 +26,12 @@
       "group": "sugar"
     },
     {
-      "name": "Unsalted butter, softened to 18-20C",
+      "name": "Unsalted butter",
       "percent": 77.3,
       "group": "fat"
     },
     {
-      "name": "Eggs, room temperature (about 3 large)",
+      "name": "Whole egg",
       "percent": 68.2,
       "group": "egg"
     },
@@ -41,12 +41,12 @@
       "group": "liquid"
     },
     {
-      "name": "Lemon zest",
+      "name": "Citrus zest",
       "percent": 3.6,
       "group": "flavour"
     },
     {
-      "name": "Lemon juice",
+      "name": "Orange juice",
       "percent": 13.6,
       "group": "liquid"
     },
@@ -71,22 +71,22 @@
       "group": "salt"
     },
     {
-      "name": "Blueberries",
+      "name": "Dried cranberries",
       "percent": 68.2,
       "group": "inclusion"
     },
     {
-      "name": "Mini M&Ms",
+      "name": "Chocolate chips",
       "percent": 36.4,
       "group": "inclusion"
     },
     {
-      "name": "Confectioners sugar",
+      "name": "Powdered sugar",
       "percent": 54.5,
       "group": "sugar"
     },
     {
-      "name": "Lemon juice",
+      "name": "Orange juice",
       "percent": 6.8,
       "group": "liquid"
     }
@@ -136,5 +136,5 @@
     "timeUnit": "minutes",
     "notes": "Start checking at 50 minutes; tent loosely with foil if the top browns before the centre sets."
   },
-  "notes": "ANTI-SINK: the fix is batter viscosity, not flour-coating the add-ins. Creamed butter, a 15 minute chill, and placing the band above the midpoint are what keep them suspended. Flour coating is close to a myth for dry add-ins such as candy shells.\n\nDO NOT MELT THE BUTTER: a melted-butter version is faster and gives a denser crumb, but the thinner batter is exactly what caused the add-ins to sink on the first bake.\n\nNO MARSHMALLOWS: they liquefy over a 55 minute bake and leave hollow tunnels. They only work scattered on top for the last 10 minutes.\n\nEDGE CLEARANCE: candy touching the hot pan melts, sticks and tears the loaf when unmolding.\n\nLEMONS: 2 lemons give all the zest needed plus about 45 g of juice, which covers both the batter and the glaze.\n\nEXPECT faint colour halos in the crumb around each M&M where the shells bleed. Normal.\n\nFROZEN BLUEBERRIES: add them frozen, do not thaw, and add 5 minutes to the bake."
+  "notes": "ANTI-SINK: the fix is batter viscosity, not flour-coating the add-ins. Creamed butter, a 15 minute chill, and placing the band above the midpoint are what keep them suspended. Flour coating is close to a myth for dry add-ins such as candy shells.\n\nDO NOT MELT THE BUTTER: a melted-butter version is faster and gives a denser crumb, but the thinner batter is exactly what caused the add-ins to sink on the first bake.\n\nNO MARSHMALLOWS: they liquefy over a 55 minute bake and leave hollow tunnels. They only work scattered on top for the last 10 minutes.\n\nEDGE CLEARANCE: candy touching the hot pan melts, sticks and tears the loaf when unmolding.\n\nLEMONS: 2 lemons give all the zest needed plus about 45 g of juice, which covers both the batter and the glaze.\n\nEXPECT faint colour halos in the crumb around each M&M where the shells bleed. Normal.\n\nFROZEN BLUEBERRIES: add them frozen, do not thaw, and add 5 minutes to the bake.\n\nEGGS: 150 g is about 3 large eggs, room temperature. BUTTER: should be softened to 18-20C — denting under a finger but still holding its shape."
 }
