@@ -414,7 +414,7 @@ const CATS = {
 
 /* ============ RECIPE DATA ============ */
 function R(id,t,s,g,w,n,ing,st,b1,b2,bl,bn,nt){
-  return {id,t,s,g,w,n,ing,st,bake:[[b1,'Oven'],[b2,bl||'Minutes']],bn,nt,photo:null};
+  return {id,t,s,g,w,n,ing,st,bake:[[b1,'Oven'],[b2,bl||'Minutes']],bn,nt,photo:null,upd:Date.now()};
 }
 
 /* Recipes are loaded at runtime from /recipes/index.json + one JSON file per
@@ -443,9 +443,11 @@ async function loadRecipes(){
   const idx = await fetch('recipes/index.json').then(r=>r.json());
   const files = await Promise.all(idx.recipes.map(entry=>
     fetch('recipes/'+entry.id+'.json').then(r=>r.json())));
-  files.forEach(j=>{
+  files.forEach((j,i)=>{
+    const rec = recipeFromJSON(j);
+    rec.upd = Date.parse(idx.recipes[i].updated) || 0;
     if(!RECIPES[j.category]) RECIPES[j.category]=[];
-    RECIPES[j.category].push(recipeFromJSON(j));
+    RECIPES[j.category].push(rec);
   });
 }
 
@@ -515,6 +517,7 @@ function loadCustomFromStorage(){
   } catch(e){ console.warn('Could not load custom recipes from localStorage', e); }
 }
 function persistIfCustom(){
+  if(S.rec) S.rec.upd = Date.now();
   if(S.rec && typeof S.rec.id==='string' && S.rec.id.startsWith('custom-')) saveCustom();
 }
 
@@ -559,7 +562,7 @@ function showCollection(){
   $('recView').classList.add('hidden');
   $('backBtn').classList.add('hidden');
   $('catBtn').classList.remove('hidden');
-  const C=CATS[S.cat], list=allRecipes(S.cat);
+  const C=CATS[S.cat], list=allRecipes(S.cat).slice().sort((a,b)=>(b.upd||0)-(a.upd||0));
   $('colTitle').textContent=C.label;
   $('colCount').textContent=list.length+' formulas';
   $('allLabel').textContent='All '+C.label.toLowerCase();
@@ -578,7 +581,7 @@ function showCollection(){
   $('recipeList').innerHTML=list.map((rec,ix)=>{
     const fl=rec.ing.filter(x=>meta(x[0]) && meta(x[0]).g==='flour').length;
     const liq=rec.ing.filter(x=>meta(x[0]) && meta(x[0]).g==='liquid').reduce((s,x)=>s+x[1],0);
-    const stat = liq>0 ? liq+'%' : rec.ing.length+' ing';
+    const stat = liq>0 ? r(liq)+'%' : rec.ing.length+' ing';
     return '<button class="rrow" data-open="'+S.cat+'|'+rec.id+'">'+
       '<div class="th" style="background:'+tint(S.cat,ix)+'"></div>'+
       '<div class="info"><div class="n">'+rec.t+'</div><div class="s">'+rec.s+'</div></div>'+
